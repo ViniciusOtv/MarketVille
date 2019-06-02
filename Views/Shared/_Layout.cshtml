@@ -17,33 +17,35 @@
     </environment>
     <link rel="stylesheet" href="~/css/site.css" />
 </head>
-<body>
+<body style="background-color: #f5f5f5">
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light">
-            <div class="container">
-                <div class="logo-div"><a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Vandora</a></div>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link navbar-font-color" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link navbar-font-color" asp-area="" asp-controller="Home" asp-action="Index">Quem Somos</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link navbar-font-color" asp-area="" asp-controller="Home" asp-action="Index">Nosso Parceiros</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link navbar-font-color" asp-area="" asp-controller="Home" asp-action="Index">Localidades</a>
-                        </li>
-                    </ul>
+        <div class="container" style="background-color: #f5f5f5; ">
+            <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light">
+                <div class="container" style="background-color: #f5f5f5;">
+                    <div class="logo-div"><a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Vandora</a></div>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+                        <ul class="navbar-nav flex-grow-1">
+                            <li class="nav-item">
+                                <a class="nav-link navbar-font-color" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link navbar-font-color" asp-area="" asp-controller="Home" asp-action="Index">Quem Somos</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link navbar-font-color" asp-area="" asp-controller="Home" asp-action="Index">Nosso Parceiros</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link navbar-font-color" asp-area="" asp-controller="Home" asp-action="Index">Localidades</a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-            </div>
-        </nav>
+            </nav>
+        </div>
     </header>
     <div class="container">
         <partial name="_CookieConsentPartial" />

@@ -57,6 +57,10 @@
               "target": "Package",
               "version": "[2.2.0, )",
               "autoReferenced": true
+            },
+            "Migrations": {
+              "target": "Package",
+              "version": "[1.0.1, )"
             }
           },
           "imports": [

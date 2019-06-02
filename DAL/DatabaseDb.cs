@@ -16,6 +16,7 @@ namespace MarktVille.DAL
 
 
         public DbSet<Category> Categories { get; set; }
+
         public DbSet<Location> Locations { get; set; }
 
         public DbSet<Product> Products { get; set; }

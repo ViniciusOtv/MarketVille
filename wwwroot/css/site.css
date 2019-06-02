@@ -65,8 +65,8 @@ body {
 }
 
 .navbar-font-color {
-    color: #0abab5 !important;
-    font-weight: 600;
+    color: black;
+    font-weight: 700;
 }
 
 .navbar-font-color:hover {
