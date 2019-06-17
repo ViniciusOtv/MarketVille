@@ -18,5 +18,6 @@ namespace MarktVille.Models
         public string Description { get; set; }
 
         public int CategoriyId { get; set; }
+        
     }
 }

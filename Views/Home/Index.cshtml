@@ -2,6 +2,8 @@
     ViewData["Title"] = "Home Page";
 }
 
+@model HomeIndexViewModel
+
 <div class="bd-example" style="margin-top: 30px;">
     <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
@@ -45,6 +47,13 @@
         <p> Visite as melhores Lojas nas melhores regiões.</p>
         <div class="row">
 
+            @*@foreach (var store in Model.Stores)
+            {
+                <div class="card mb-4 bg-white rounded" style="margin-left: 30px; box-shadow: 0 1px 15px rgba(128, 128, 128, 0.3);">
+                    <img class="img-fluid" src="@store.Image" />
+                </div>
+            }*@
+
             <div class="card mb-4 bg-white rounded" style="margin-left: 30px; box-shadow: 0 1px 15px rgba(128, 128, 128, 0.3);">
                 <img class="img-fluid" src="~/imagens/nike.png" />
             </div>
@@ -74,21 +83,33 @@
 
         <div class="row" style="background-color: #ededed; padding: 20px;">
 
-            <div class="card mb-4 bg-white rounded" style="margin-left: 30px; margin-top: 20px; box-shadow: 0 1px 15px rgba(128, 128, 128, 0.3);">
-                <img class="img-fluid" src="https://source.unsplash.com/HY3l4IeOc3E/230x225" />
-            </div>
+            @foreach (var product in Model.Products)
+            {
+                <div class="card mb-4 bg-white rounded div-product">
+                    <img class="img-fluid" src="@product.Image" />
+                    <div class="card-body card-product-shadow">
+                        <p class="card-text">
+                            @product.Name
+                        </p>
+                    </div>
+                </div>
+            }
 
-            <div class="card mb-4 bg-white rounded" style="margin-left: 30px;  margin-top: 20px; box-shadow: 0 1px 15px rgba(128, 128, 128, 0.3);">
-                <img class="img-fluid" src="https://source.unsplash.com/LxVxPA1LOVM/230x225" />
-            </div>
+            @*<div class="card mb-4 bg-white rounded" style="margin-left: 30px; margin-top: 20px; box-shadow: 0 1px 15px rgba(128, 128, 128, 0.3);">
+                    <img class="img-fluid" src="https://source.unsplash.com/HY3l4IeOc3E/230x225" />
+                </div>
 
-            <div class="card mb-4 bg-white rounded" style="margin-left: 30px;  margin-top: 20px; box-shadow: 0 1px 15px rgba(128, 128, 128, 0.3);">
-                <img class="img-fluid" src="https://source.unsplash.com/b-8Jma8ZifA/230x225" />
-            </div>
+                <div class="card mb-4 bg-white rounded" style="margin-left: 30px;  margin-top: 20px; box-shadow: 0 1px 15px rgba(128, 128, 128, 0.3);">
+                    <img class="img-fluid" src="https://source.unsplash.com/LxVxPA1LOVM/230x225" />
+                </div>
 
-            <div class="card mb-4 bg-white rounded" style="margin-left: 30px;  margin-top: 20px; box-shadow: 0 1px 15px rgba(128, 128, 128, 0.3);">
-                <img class="img-fluid" src="https://source.unsplash.com/YGTw7VdAkUM/230x225" />
-            </div>
+                <div class="card mb-4 bg-white rounded" style="margin-left: 30px;  margin-top: 20px; box-shadow: 0 1px 15px rgba(128, 128, 128, 0.3);">
+                    <img class="img-fluid" src="https://source.unsplash.com/b-8Jma8ZifA/230x225" />
+                </div>
+
+                <div class="card mb-4 bg-white rounded" style="margin-left: 30px;  margin-top: 20px; box-shadow: 0 1px 15px rgba(128, 128, 128, 0.3);">
+                    <img class="img-fluid" src="https://source.unsplash.com/YGTw7VdAkUM/230x225" />
+                </div>*@
 
             <div class="container" style="text-align: center; margin-top: 20px;">
                 <button type="button" class="btn-square" style="text-align: center"><</button>

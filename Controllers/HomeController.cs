@@ -5,17 +5,23 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using MarktVille.Models;
+using MarktVille.DAL;
 
 namespace MarktVille.Controllers
 {
     public class HomeController : Controller
     {
+        private readonly DatabaseDb _context;
+
+        public HomeController(DatabaseDb context)
+        {
+            _context = context;
+        }
         public IActionResult Index()
         {
             var model = new HomeIndexViewModel();
-            
-            
-            return View();
+            model.Products = _context.Products.ToArray();
+            return View(model);
         }
 
         public IActionResult Privacy()
