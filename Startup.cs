@@ -27,6 +27,7 @@ namespace MarktVille
         public void ConfigureServices(IServiceCollection services)
         {
            services.AddDbContext<DatabaseDb>(options =>
+           
            options.UseSqlServer(Configuration.GetConnectionString("Ville_dev"))
            );
 

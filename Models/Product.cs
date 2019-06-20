@@ -17,6 +17,13 @@ namespace MarktVille.Models
 
         public string Description { get; set; }
 
+        public int SupplierId { get; set;  }
+
+        public int StoreId { get; set; }
+
         public int CategoriyId { get; set; }
+
+        public int SubCategoryId { get; set; }
+        
     }
 }

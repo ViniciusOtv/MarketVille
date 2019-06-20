@@ -16,5 +16,7 @@ namespace MarktVille.Models
         public string UF { get; set; }
 
         public string Country { get; set; }
+
+        public string nickName { get; set; }
     }
 }

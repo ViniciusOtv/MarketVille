@@ -11,8 +11,14 @@ namespace MarktVille.Models
 
         public string Name { get; set; }
 
-        public List<Product> ProductId { get; set; }
+        public string Description { get; set; }
+
+        public string CoverImage { get; set; }
+
+        public string Image { get; set; }
 
         public int SupplierId { get; set; }
+
+        public int LocationId { get; set; }
     }
 }
