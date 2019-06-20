@@ -63,16 +63,17 @@
         <p style="color: white; text-align: center">Logo Vandora</p>
     </div>
 
-    <div class="container div-logo-store">
+    <div class="container div-logo-store" style="box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);">
         <div class="row" style="background-color: #ededed;">
             <div class="card mb-4 bg-white rounded">
                 <img class="img-fluid" src="https://source.unsplash.com/LxVxPA1LOVM/2300x900" />
             </div>
 
-            <div class="row" style="margin-left: 80px;">
+            <div class="row" style="margin-left: 80px; height: auto;">
+
                 @foreach (var product in Model.Products)
                 {
-                    <div class="card mb-4 bg-white rounded div-product-store">
+                    <div class="card mb-4 bg-white rounded div-product-store" style="margin-top: 150px">
                         <img class="img-fluid" src="@product.Image" />
                         <div class="card-body card-product-shadow">
                             <p class="card-text">
@@ -81,9 +82,12 @@
                         </div>
                     </div>
                 }
+                
+
             </div>
         </div>
     </div>
+
 
 </body>
 
