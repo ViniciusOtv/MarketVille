@@ -5,7 +5,6 @@ C:\Users\vinicius.silva\source\repos\Vandora_MarktVille\MarktVille\bin\Debug\net
 C:\Users\vinicius.silva\source\repos\Vandora_MarktVille\MarktVille\bin\Debug\netcoreapp2.2\MarktVille.pdb
 C:\Users\vinicius.silva\source\repos\Vandora_MarktVille\MarktVille\bin\Debug\netcoreapp2.2\MarktVille.Views.dll
 C:\Users\vinicius.silva\source\repos\Vandora_MarktVille\MarktVille\bin\Debug\netcoreapp2.2\MarktVille.Views.pdb
-C:\Users\vinicius.silva\source\repos\Vandora_MarktVille\MarktVille\obj\Debug\netcoreapp2.2\MarktVille.csprojAssemblyReference.cache
 C:\Users\vinicius.silva\source\repos\Vandora_MarktVille\MarktVille\obj\Debug\netcoreapp2.2\MarktVille.csproj.CoreCompileInputs.cache
 C:\Users\vinicius.silva\source\repos\Vandora_MarktVille\MarktVille\obj\Debug\netcoreapp2.2\MarktVille.RazorAssemblyInfo.cache
 C:\Users\vinicius.silva\source\repos\Vandora_MarktVille\MarktVille\obj\Debug\netcoreapp2.2\MarktVille.RazorAssemblyInfo.cs
