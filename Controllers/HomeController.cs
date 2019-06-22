@@ -21,6 +21,7 @@ namespace MarktVille.Controllers
         {
             var model = new HomeIndexViewModel();
             model.Products = _context.Products.ToArray();
+            model.Stores = _context.Stores.ToArray();
             return View(model);
         }
 

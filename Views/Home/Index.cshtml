@@ -47,30 +47,34 @@
         <p> Visite as melhores Lojas nas melhores regiões.</p>
         <div class="row">
 
-            @*@foreach (var store in Model.Stores)
+            @foreach (var store in Model.Stores)
             {
-                <div class="card mb-4 bg-white rounded" style="margin-left: 30px; box-shadow: 0 1px 15px rgba(128, 128, 128, 0.3);">
-                    <img class="img-fluid" src="@store.Image" />
+              
+                    <div class="card mb-4 bg-white rounded" style="margin-left: 30px; box-shadow: 0 1px 15px rgba(128, 128, 128, 0.3);">
+                        <a href="/store/index/@store.StoreId">
+                            <img class="img-fluid" src="@store.Image" />
+                        </a>
+                    </div>
+                
+            }
+
+            @*<div class="card mb-4 bg-white rounded" style="margin-left: 30px; box-shadow: 0 1px 15px rgba(128, 128, 128, 0.3);">
+                    <img class="img-fluid" src="~/imagens/nike.png" />
                 </div>
-            }*@
 
-            <div class="card mb-4 bg-white rounded" style="margin-left: 30px; box-shadow: 0 1px 15px rgba(128, 128, 128, 0.3);">
-                <img class="img-fluid" src="~/imagens/nike.png" />
-            </div>
-
-            <div class="card mb-4 bg-white rounded" style="margin-left: 30px; box-shadow: 0 1px 15px rgba(128, 128, 128, 0.3);">
-                <img class="img-fluid" src="https://source.unsplash.com/pO2bglTMJpo/230x255" />
-            </div>
+                <div class="card mb-4 bg-white rounded" style="margin-left: 30px; box-shadow: 0 1px 15px rgba(128, 128, 128, 0.3);">
+                    <img class="img-fluid" src="https://source.unsplash.com/pO2bglTMJpo/230x255" />
+                </div>
 
 
-            <div class="card mb-4 bg-white rounded" style="margin-left: 30px; box-shadow: 0 1px 15px rgba(128, 128, 128, 0.3);">
-                <img class="img-fluid" src="https://source.unsplash.com/c2x94-kmQcQ/230x255" />
-            </div>
+                <div class="card mb-4 bg-white rounded" style="margin-left: 30px; box-shadow: 0 1px 15px rgba(128, 128, 128, 0.3);">
+                    <img class="img-fluid" src="https://source.unsplash.com/c2x94-kmQcQ/230x255" />
+                </div>
 
 
-            <div class="card mb-4 bg-white rounded" style="margin-left: 30px; box-shadow: 0 1px 15px rgba(128, 128, 128, 0.3);">
-                <img class="img-fluid" src="~/imagens/aber.png" />
-            </div>
+                <div class="card mb-4 bg-white rounded" style="margin-left: 30px; box-shadow: 0 1px 15px rgba(128, 128, 128, 0.3);">
+                    <img class="img-fluid" src="~/imagens/aber.png" />
+                </div>*@
 
 
         </div>

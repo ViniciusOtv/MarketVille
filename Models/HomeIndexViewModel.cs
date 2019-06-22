@@ -16,5 +16,7 @@ namespace MarktVille.Models
         public Store[] Stores { get; set; }
 
         public Location[] Locations { get; set; }
+
+        public int SelectStore { get; set; }
     }
 }
