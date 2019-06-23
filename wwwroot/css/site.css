@@ -91,7 +91,7 @@ body {
 }
 
 .btn-square {
-    background-color: rgb(58,58,58); /* Green */
+    background-color: rgb(58,58,58); 
     border: 2px solid white;
     color: white;
     padding: 10px 40px;

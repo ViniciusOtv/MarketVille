@@ -62,32 +62,37 @@
     <div style="background-color: rgb(58,58,58); height: 250px; padding-top: 30px">
         <p style="color: white; text-align: center">Logo Vandora</p>
     </div>
+    <div class="container">
+        <div class="container" style="box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22); top: 200px; z-index: 1; position: absolute;">
+            <div class="row" style="background-color: #ededed;">
 
-    <div class="container div-logo-store" style="box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);">
-        <div class="row" style="background-color: #ededed;">
-
-            @foreach (var store in Model.Stores)
-            {
-
-                <div class="card mb-4 bg-white rounded">
-                    <img class="img-fluid" src="@store.CoverImage" />
-                </div>
-            }
-        </div>
-        <div class="row" style="margin-left: 80px; height: auto;">
-
-            @foreach (var product in Model.Products)
-            {
-                <div class="card mb-4 bg-white rounded div-product-store" style="margin-top: 80px">
-                    <img class="img-fluid" src="@product.Image" />
-                    <div class="card-body card-product-shadow">
-                        <p class="card-text">
-                            @product.Name
-                        </p>
+                @foreach (var store in Model.Stores)
+                {
+                    <div class="col-md-12">
+                        <div class="container col-6" style="padding: 30px">
+                            <div class="card">
+                                <img class="img-fluid" src="@store.CoverImage" />
+                            </div>
+                        </div>
                     </div>
-                </div>
-            }
+                }
+            </div>
 
+            <div class="row" style="margin-left: 80px; height: auto;">
+
+                @foreach (var product in Model.Products)
+                {
+                    <div class="card mb-4 bg-white rounded div-product-store" style="margin-top: 80px">
+                        <img class="img-fluid" src="@product.Image" />
+                        <div class="card-body card-product-shadow">
+                            <p class="card-text">
+                                @product.Name
+                            </p>
+                        </div>
+                    </div>
+                }
+
+            </div>
 
         </div>
     </div>
