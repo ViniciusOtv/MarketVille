@@ -19,9 +19,9 @@
 </head>
 <body style="background-color: white;">
     <header style="background-color: rgb(58, 58, 58)">
-        <div class="container">
+        <div class="container-fluid">
             <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light">
-                <div class="container">
+                <div class="container-fluid">
                     <div class="logo-div"><a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Vandora</a></div>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                             aria-expanded="false" aria-label="Toggle navigation">
@@ -48,7 +48,7 @@
         </div>
     </header>
 
-    <div class="container">
+    <div class="container-fluid">
         <partial name="_CookieConsentPartial" />
         <main role="main" class="pb-3">
             @RenderBody()

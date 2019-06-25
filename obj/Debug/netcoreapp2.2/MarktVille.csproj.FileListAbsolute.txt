@@ -29,3 +29,4 @@ C:\Users\vinicius.silva\source\repos\Vandora_MarktVille\MarktVille\obj\Debug\net
 C:\Users\vinicius.silva\source\repos\Vandora_MarktVille\MarktVille\obj\Debug\netcoreapp2.2\MarktVille.pdb
 C:\Users\vinicius.silva\source\repos\Vandora_MarktVille\MarktVille\obj\Debug\netcoreapp2.2\MarktVille.csproj.CopyComplete
 C:\Users\vinicius.silva\source\repos\Vandora_MarktVille\MarktVille\obj\Debug\netcoreapp2.2\MarktVille.csprojAssemblyReference.cache
+C:\Users\vinicius.silva\source\repos\Vandora_MarktVille\MarktVille\obj\Debug\netcoreapp2.2\Razor\Views\Product\Index.g.cshtml.cs
