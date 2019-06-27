@@ -82,46 +82,39 @@
     </div>
 
 
-    <div class=" container" style="background-color: rgb(58,58,58); margin-top: 150px; height: auto">
+    <div class="container-fluid" style="background-color: rgb(58,58,58); margin-top: 150px; height: auto">
 
         <p style="color: white; padding: 10px; text-align: center">
             Veja alguns dos nossos produtos <br />
             O catálogo de Produtos mais completo e variado, <bold> direto da 25 de Março</bold>
         </p>
 
-
         <div class="row" style="background-color: #ededed; padding: 20px;">
+            <div class="container-fluid">
+                <div class="row">
 
-            @foreach (var product in Model.Products)
-            {
-                <div class="card mb-4 bg-white rounded div-product">
-                    <img class="img-fluid" src="@product.Image" />
-                    <div class="card-body card-product-shadow">
-                        <p class="card-text">
-                            @product.Name
-                        </p>
-                    </div>
+                    @foreach (var product in Model.Products)
+                    {
+                        int count = 0;
+                        <div class="card mb-4" style="box-shadow: 0 5px 15px rgba(58, 58, 58, 0.5); margin-left: 20px">
+                            <img class="img-fluid" src="@product.Image" />
+                            <div class="card-body card-product-shadow">
+                                <p class="card-text">
+                                    @product.Name
+                                </p>
+                            </div>
+                        </div>
+                        if (count == 4)
+                        {
+                            return;
+                        }
+                    }
+
                 </div>
-            }
-
-            @*<div class="card mb-4 bg-white rounded" style="margin-left: 30px; margin-top: 20px; box-shadow: 0 1px 15px rgba(128, 128, 128, 0.3);">
-                    <img class="img-fluid" src="https://source.unsplash.com/HY3l4IeOc3E/230x225" />
-                </div>
-
-                <div class="card mb-4 bg-white rounded" style="margin-left: 30px;  margin-top: 20px; box-shadow: 0 1px 15px rgba(128, 128, 128, 0.3);">
-                    <img class="img-fluid" src="https://source.unsplash.com/LxVxPA1LOVM/230x225" />
-                </div>
-
-                <div class="card mb-4 bg-white rounded" style="margin-left: 30px;  margin-top: 20px; box-shadow: 0 1px 15px rgba(128, 128, 128, 0.3);">
-                    <img class="img-fluid" src="https://source.unsplash.com/b-8Jma8ZifA/230x225" />
-                </div>
-
-                <div class="card mb-4 bg-white rounded" style="margin-left: 30px;  margin-top: 20px; box-shadow: 0 1px 15px rgba(128, 128, 128, 0.3);">
-                    <img class="img-fluid" src="https://source.unsplash.com/YGTw7VdAkUM/230x225" />
-                </div>*@
+            </div>
 
             <div class="container" style="text-align: center; margin-top: 20px;">
-                <button type="button" class="btn-square" style="text-align: center"><</button>
+                <button type="button" class="btn-square" style="text-align: center"><i class="fas fa-angle-right"></i></button>
                 <button type="button" class="btn-square" style="text-align: center">></button>
             </div>
 
