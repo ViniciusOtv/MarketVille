@@ -51,30 +51,30 @@
                 @foreach (var store in Model.Stores)
                 {
 
-                    <div class="card mb-4" style="margin-left: 30px; box-shadow: 0 1px 15px rgba(128, 128, 128, 0.3);">
-                        <a href="/store/index/@store.StoreId">
-                            <img class="img-fluid" src="@store.Image" />
-                        </a>
-                    </div>
+                <div class="card mb-4" style="margin-left: 30px; box-shadow: 0 1px 15px rgba(128, 128, 128, 0.3);">
+                    <a href="/store/index/@store.StoreId">
+                        <img class="img-fluid" src="@store.Image" />
+                    </a>
+                </div>
                 }
 
                 @*<div class="card mb-4 bg-white rounded" style="margin-left: 30px; box-shadow: 0 1px 15px rgba(128, 128, 128, 0.3);">
-                        <img class="img-fluid" src="~/imagens/nike.png" />
-                    </div>
+                    <img class="img-fluid" src="~/imagens/nike.png" />
+                </div>
 
-                    <div class="card mb-4 bg-white rounded" style="margin-left: 30px; box-shadow: 0 1px 15px rgba(128, 128, 128, 0.3);">
-                        <img class="img-fluid" src="https://source.unsplash.com/pO2bglTMJpo/230x255" />
-                    </div>
-
-
-                    <div class="card mb-4 bg-white rounded" style="margin-left: 30px; box-shadow: 0 1px 15px rgba(128, 128, 128, 0.3);">
-                        <img class="img-fluid" src="https://source.unsplash.com/c2x94-kmQcQ/230x255" />
-                    </div>
+                <div class="card mb-4 bg-white rounded" style="margin-left: 30px; box-shadow: 0 1px 15px rgba(128, 128, 128, 0.3);">
+                    <img class="img-fluid" src="https://source.unsplash.com/pO2bglTMJpo/230x255" />
+                </div>
 
 
-                    <div class="card mb-4 bg-white rounded" style="margin-left: 30px; box-shadow: 0 1px 15px rgba(128, 128, 128, 0.3);">
-                        <img class="img-fluid" src="~/imagens/aber.png" />
-                    </div>*@
+                <div class="card mb-4 bg-white rounded" style="margin-left: 30px; box-shadow: 0 1px 15px rgba(128, 128, 128, 0.3);">
+                    <img class="img-fluid" src="https://source.unsplash.com/c2x94-kmQcQ/230x255" />
+                </div>
+
+
+                <div class="card mb-4 bg-white rounded" style="margin-left: 30px; box-shadow: 0 1px 15px rgba(128, 128, 128, 0.3);">
+                    <img class="img-fluid" src="~/imagens/aber.png" />
+                </div>*@
 
 
             </div>
@@ -92,9 +92,37 @@
         <div class="row" style="background-color: #ededed; padding: 20px;">
             <div class="container-fluid">
                 <div class="row">
+                    <div id="slideCard" class="carousel slide" data-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <div class="card mb-4" style="box-shadow: 0 5px 15px rgba(58, 58, 58, 0.5); margin-left: 20px">
+                                    <img class="img-fluid" src="https://source.unsplash.com/c2x94-kmQcQ/230x255" />
+                                    <div class="card-body card-product-shadow">
+                                        <p class="card-text">
+                                            Tênis Nike
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="carousel-item active">
+                                    <div class="card mb-4" style="box-shadow: 0 5px 15px rgba(58, 58, 58, 0.5); margin-left: 20px">
+                                        <img class="img-fluid" src="https://source.unsplash.com/c2x94-kmQcQ/230x255" />
+                                        <div class="card-body card-product-shadow">
+                                            <p class="card-text">
+                                                Tênis Nike
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
 
-                    @foreach (var product in Model.Products)
-                    {
+
+                            </div>
+                        </div>
+
+
+                        @*@foreach (var product in Model.Products)
+                        {
                         int count = 0;
                         <div class="card mb-4" style="box-shadow: 0 5px 15px rgba(58, 58, 58, 0.5); margin-left: 20px">
                             <img class="img-fluid" src="@product.Image" />
@@ -106,20 +134,23 @@
                         </div>
                         if (count == 4)
                         {
-                            return;
+                        return;
                         }
-                    }
+                        }*@
+                    <div class="container" style="text-align: center; margin-top: 20px;">
+                        <a class="carousel-control-prev" href="#slideCard" data-slide="prev">
+                            <span type="button" class="btn-square" style="text-align: center"><</span>
+                        </a>
+                        <a class="carousel-control-next" href="#slideCard" data-slide="next">
+                            <span type="button" class="btn-square" style="text-align: center">></span>
+                        </a>
+                       
+                    </div>
 
+                    </div>
                 </div>
-            </div>
-
-            <div class="container" style="text-align: center; margin-top: 20px;">
-                <button type="button" class="btn-square" style="text-align: center"><i class="fas fa-angle-right"></i></button>
-                <button type="button" class="btn-square" style="text-align: center">></button>
             </div>
 
         </div>
 
     </div>
-
-</div>
