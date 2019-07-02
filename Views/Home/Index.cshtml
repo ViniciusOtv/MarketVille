@@ -45,7 +45,7 @@
 
         <div class="container col-12 center-page" style="margin-top: 120px">
             <p> Visite as melhores Lojas nas melhores regiões.</p>
-         
+
             <div class="row">
                 @foreach (var store in Model.Stores)
                 {
@@ -58,22 +58,22 @@
                 }
 
                 @*<div class="card mb-4 bg-white rounded" style="margin-left: 30px; box-shadow: 0 1px 15px rgba(128, 128, 128, 0.3);">
-                <img class="img-fluid" src="~/imagens/nike.png" />
-            </div>
+                        <img class="img-fluid" src="~/imagens/nike.png" />
+                    </div>
 
-            <div class="card mb-4 bg-white rounded" style="margin-left: 30px; box-shadow: 0 1px 15px rgba(128, 128, 128, 0.3);">
-                <img class="img-fluid" src="https://source.unsplash.com/pO2bglTMJpo/230x255" />
-            </div>
-
-
-            <div class="card mb-4 bg-white rounded" style="margin-left: 30px; box-shadow: 0 1px 15px rgba(128, 128, 128, 0.3);">
-                <img class="img-fluid" src="https://source.unsplash.com/c2x94-kmQcQ/230x255" />
-            </div>
+                    <div class="card mb-4 bg-white rounded" style="margin-left: 30px; box-shadow: 0 1px 15px rgba(128, 128, 128, 0.3);">
+                        <img class="img-fluid" src="https://source.unsplash.com/pO2bglTMJpo/230x255" />
+                    </div>
 
 
-            <div class="card mb-4 bg-white rounded" style="margin-left: 30px; box-shadow: 0 1px 15px rgba(128, 128, 128, 0.3);">
-                <img class="img-fluid" src="~/imagens/aber.png" />
-            </div>*@
+                    <div class="card mb-4 bg-white rounded" style="margin-left: 30px; box-shadow: 0 1px 15px rgba(128, 128, 128, 0.3);">
+                        <img class="img-fluid" src="https://source.unsplash.com/c2x94-kmQcQ/230x255" />
+                    </div>
+
+
+                    <div class="card mb-4 bg-white rounded" style="margin-left: 30px; box-shadow: 0 1px 15px rgba(128, 128, 128, 0.3);">
+                        <img class="img-fluid" src="~/imagens/aber.png" />
+                    </div>*@
 
 
             </div>
@@ -84,8 +84,7 @@
     <div class="container-fluid" style="background-color: rgb(58,58,58); margin-top: 150px; height: auto">
 
         <p style="color: white; padding: 10px; text-align: center">
-            Veja alguns dos nossos produtos <br />
-            O catálogo de Produtos mais completo e variado, <bold> direto da 25 de Março</bold>
+            Veja alguns dos nossos produtos <bold> direto da 25 de Março</bold>
         </p>
 
         <div class="row" style="background-color: #ededed; padding: 20px;">
@@ -147,36 +146,16 @@
                     </div>
 
 
-                    @*@foreach (var product in Model.Products)
-                        {
-                        int count = 0;
-                        <div class="card mb-4" style="box-shadow: 0 5px 15px rgba(58, 58, 58, 0.5); margin-left: 20px">
-                            <img class="img-fluid" src="@product.Image" />
-                            <div class="card-body card-product-shadow">
-                                <p class="card-text">
-                                    @product.Name
-                                </p>
-                            </div>
-                        </div>
-                        if (count == 4)
-                        {
-                        return;
-                        }
-                        }*@
-                    <div class="container" style="text-align: center; margin-top: 20px;">
+                    <div class="container" style="text-align: center; margin-top: 20px; background-color: red">
                         <a class="carousel-control-prev" href="#slideCard" data-slide="prev">
                             <span type="button" class="btn-square" style="text-align: center"><</span>
                         </a>
                         <a class="carousel-control-next" href="#slideCard" data-slide="next">
                             <span type="button" class="btn-square" style="text-align: center">></span>
                         </a>
-
                     </div>
-
                 </div>
-
             </div>
-
         </div>
 
     </div>

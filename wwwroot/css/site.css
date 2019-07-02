@@ -59,21 +59,25 @@ body {
 }
 
 .logo-div {
-    background-color: transparent;
-    width: 50%;
+    background-color: rgb(58,58,58);
+    width: 60%;
     margin-left: 20px;
-}
+    color: white!important;
+} /*div do Logo do menu do lado esquerdo*/
 
 .navbar-font-color {
     color: white !important;
     font-weight: 500;
+    font-size: 1.05rem;
 }
 
-/*.navbar-font-color:hover {
-        background-color: white;
-        color: white !important;
-        height: auto
-    }*/
+.button-card {
+    font-family: "Hurme Bold", Helvetica, Arial, sans-serif;
+    font-size: 1.05rem;
+    width: auto;
+    color: white !important;
+    font-weight: 500;
+}
 
 .carousel-information {
     margin-top: 10px;
