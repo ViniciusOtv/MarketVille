@@ -5,6 +5,9 @@
       "FontAwesome/4.7.0": {
         "type": "package"
       },
+      "jQuery/1.8.3": {
+        "type": "package"
+      },
       "log4net/2.0.5": {
         "type": "package",
         "compile": {
@@ -2917,6 +2920,12 @@
           "lib/netstandard1.6/NuGet.Frameworks.dll": {}
         }
       },
+      "Owl.Carousel.2/2.0.1": {
+        "type": "package",
+        "dependencies": {
+          "jQuery": "1.8.3"
+        }
+      },
       "Remotion.Linq/2.2.0": {
         "type": "package",
         "dependencies": {
@@ -4767,6 +4776,25 @@
         "fontawesome.4.7.0.nupkg.sha512",
         "fontawesome.nuspec",
         "tools/install.ps1"
+      ]
+    },
+    "jQuery/1.8.3": {
+      "sha512": "0vNxSMyt3AVUeQeJvddXo5lER/d9UBjoyxOsjWmXjTlHdJaYlf9INK1WshVEp+0MGsx9HfgWWa/Yt4Psv8TzEQ==",
+      "type": "package",
+      "path": "jquery/1.8.3",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Content/Scripts/jquery-1.8.3-vsdoc.js",
+        "Content/Scripts/jquery-1.8.3.js",
+        "Content/Scripts/jquery-1.8.3.min.js",
+        "Tools/common.ps1",
+        "Tools/install.ps1",
+        "Tools/jquery-1.8.3.intellisense.js",
+        "Tools/uninstall.ps1",
+        "jquery.1.8.3.nupkg.sha512",
+        "jquery.nuspec"
       ]
     },
     "log4net/2.0.5": {
@@ -8182,6 +8210,19 @@
         "lib/netstandard1.6/NuGet.Frameworks.xml",
         "nuget.frameworks.4.7.0.nupkg.sha512",
         "nuget.frameworks.nuspec"
+      ]
+    },
+    "Owl.Carousel.2/2.0.1": {
+      "sha512": "fOyY88ET9CthKZOPgQTSLq7UwM86bVybnGoi973lFUHjYr/dkszqk2eAFVhuOYpvb6cRTK4Xg46OndVIBE0kRg==",
+      "type": "package",
+      "path": "owl.carousel.2/2.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "content/Content/owl.carousel.css",
+        "content/Scripts/owl.carousel.js",
+        "owl.carousel.2.2.0.1.nupkg.sha512",
+        "owl.carousel.2.nuspec"
       ]
     },
     "Remotion.Linq/2.2.0": {
@@ -13015,7 +13056,8 @@
       "Microsoft.AspNetCore.Razor.Design >= 2.2.0",
       "Microsoft.NETCore.App >= 2.2.0",
       "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 2.2.3",
-      "Migrations >= 1.0.1"
+      "Migrations >= 1.0.1",
+      "Owl.Carousel.2 >= 2.0.1"
     ]
   },
   "packageFolders": {
@@ -13087,6 +13129,10 @@
           "Migrations": {
             "target": "Package",
             "version": "[1.0.1, )"
+          },
+          "Owl.Carousel.2": {
+            "target": "Package",
+            "version": "[2.0.1, )"
           }
         },
         "imports": [

@@ -93,7 +93,7 @@ body {
 .btn-square {
     background-color: rgb(58,58,58); 
     border: 2px solid white;
-    color: white;
+    color: white!important;
     padding: 10px 40px;
     text-align: center;
     text-decoration: none;
@@ -153,4 +153,9 @@ body {
 
 .card-product-shadow {
     box-shadow: 0 1px 15px rgba(128, 128, 128, 0.3);
+}
+
+.row-equal > div[class*='col-'] {
+    display: flex;
+    flex: 1 0 auto;
 }

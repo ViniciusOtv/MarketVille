@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.2",
-    "signature": "775bb90ece0ce4cb1cd6a1d3bfeab4eae9af9c2b"
+    "signature": "f07776527784cdd1316a4a8ca1d732d3e6826f33"
   },
   "compilationOptions": {
     "defines": [
@@ -29,7 +29,8 @@
           "Microsoft.AspNetCore.Razor.Design": "2.2.0",
           "Microsoft.NETCore.App": "2.2.0",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "2.2.3",
-          "Migrations": "1.0.1"
+          "Migrations": "1.0.1",
+          "Owl.Carousel.2": "2.0.1"
         },
         "runtime": {
           "MarktVille.dll": {}
@@ -39,6 +40,7 @@
         }
       },
       "FontAwesome/4.7.0": {},
+      "jQuery/1.8.3": {},
       "log4net/2.0.5": {
         "runtime": {
           "lib/net45-full/log4net.dll": {
@@ -231,6 +233,11 @@
         },
         "compile": {
           "lib/netstandard1.6/NuGet.Frameworks.dll": {}
+        }
+      },
+      "Owl.Carousel.2/2.0.1": {
+        "dependencies": {
+          "jQuery": "1.8.3"
         }
       },
       "System.Composition/1.0.31": {
@@ -3579,6 +3586,13 @@
       "path": "fontawesome/4.7.0",
       "hashPath": "fontawesome.4.7.0.nupkg.sha512"
     },
+    "jQuery/1.8.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-0vNxSMyt3AVUeQeJvddXo5lER/d9UBjoyxOsjWmXjTlHdJaYlf9INK1WshVEp+0MGsx9HfgWWa/Yt4Psv8TzEQ==",
+      "path": "jquery/1.8.3",
+      "hashPath": "jquery.1.8.3.nupkg.sha512"
+    },
     "log4net/2.0.5": {
       "type": "package",
       "serviceable": true,
@@ -3669,6 +3683,13 @@
       "sha512": "sha512-qbXaB76XYUVLocLBs8Z9TS/ERGK2wm797feO+0JEPFvT7o7MRadOR77mqaSD4J1k8G+DlZQyq+MlkCuxrkr3ag==",
       "path": "nuget.frameworks/4.7.0",
       "hashPath": "nuget.frameworks.4.7.0.nupkg.sha512"
+    },
+    "Owl.Carousel.2/2.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-fOyY88ET9CthKZOPgQTSLq7UwM86bVybnGoi973lFUHjYr/dkszqk2eAFVhuOYpvb6cRTK4Xg46OndVIBE0kRg==",
+      "path": "owl.carousel.2/2.0.1",
+      "hashPath": "owl.carousel.2.2.0.1.nupkg.sha512"
     },
     "System.Composition/1.0.31": {
       "type": "package",

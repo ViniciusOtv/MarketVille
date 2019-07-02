@@ -15,6 +15,7 @@ C:\Users\vinicius.silva\source\repos\Vandora_MarktVille\MarktVille\obj\Debug\net
 C:\Users\vinicius.silva\source\repos\Vandora_MarktVille\MarktVille\obj\Debug\netcoreapp2.2\MarktVille.RazorCoreGenerate.cache
 C:\Users\vinicius.silva\source\repos\Vandora_MarktVille\MarktVille\obj\Debug\netcoreapp2.2\Razor\Views\Home\Index.g.cshtml.cs
 C:\Users\vinicius.silva\source\repos\Vandora_MarktVille\MarktVille\obj\Debug\netcoreapp2.2\Razor\Views\Home\Privacy.g.cshtml.cs
+C:\Users\vinicius.silva\source\repos\Vandora_MarktVille\MarktVille\obj\Debug\netcoreapp2.2\Razor\Views\Product\Index.g.cshtml.cs
 C:\Users\vinicius.silva\source\repos\Vandora_MarktVille\MarktVille\obj\Debug\netcoreapp2.2\Razor\Views\Shared\Error.g.cshtml.cs
 C:\Users\vinicius.silva\source\repos\Vandora_MarktVille\MarktVille\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_CookieConsentPartial.g.cshtml.cs
 C:\Users\vinicius.silva\source\repos\Vandora_MarktVille\MarktVille\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_Layout.g.cshtml.cs
@@ -29,4 +30,3 @@ C:\Users\vinicius.silva\source\repos\Vandora_MarktVille\MarktVille\obj\Debug\net
 C:\Users\vinicius.silva\source\repos\Vandora_MarktVille\MarktVille\obj\Debug\netcoreapp2.2\MarktVille.pdb
 C:\Users\vinicius.silva\source\repos\Vandora_MarktVille\MarktVille\obj\Debug\netcoreapp2.2\MarktVille.csproj.CopyComplete
 C:\Users\vinicius.silva\source\repos\Vandora_MarktVille\MarktVille\obj\Debug\netcoreapp2.2\MarktVille.csprojAssemblyReference.cache
-C:\Users\vinicius.silva\source\repos\Vandora_MarktVille\MarktVille\obj\Debug\netcoreapp2.2\Razor\Views\Product\Index.g.cshtml.cs
