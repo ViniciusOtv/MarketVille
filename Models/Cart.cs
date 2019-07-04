@@ -22,9 +22,7 @@ namespace MarktVille.Models
             }
             else
             {
-                var cardItem = new CartItem(product.ProductId,
-                    product.Name,
-                    product.Price);
+                var cardItem = new CartItem(product.ProductId);
 
                 Itens.Add(product.ProductId, cardItem);
             }
@@ -53,15 +51,20 @@ namespace MarktVille.Models
             Itens.Clear();
         }
 
-        public decimal GetTotalPrice()
+        public decimal GetTotalPrice(Product product)
         {
-            decimal result = 0;
-            foreach (var item in Itens.Values)
-            {
-                result += item.TotalPrice;
-            }
+            var price = product.Price;
 
-            return result;
+            var TotalPrice = price * QuantityItens;
+
+            return TotalPrice;
         }
+
+        //Obter o carrinho do usuário pelo Id
+        //public CartItem GetCartUserById()
+        //{
+
+        //}
+
     }
 }

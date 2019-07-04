@@ -7,28 +7,31 @@ namespace MarktVille.Models
 {
     public class CartItem
     {
-        public int CardItemId { get; set; }
-
-        public int ProductId { get; set; }
-
-        public string Name { get; set; }
-
-        public decimal UnitPrice { get; set; }
-
-        public int Quantity { get; set; }
-
-        public CartItem(
-            int productId, 
-            string name, 
-            decimal unitPrice)
+        private int cartItemId;
+        public int CardItemId
         {
-            this.ProductId = productId;
-            this.Name = name;
-            this.UnitPrice = unitPrice;
+            get { return cartItemId; }
+            set { cartItemId = value; }
         }
 
-        public decimal TotalPrice =>
-            UnitPrice * Quantity;
+        private int productId;
+        public int ProductId
+        {
+            get { return productId; }
+            set { productId = value; }
+        }
+
+        private int quantity;
+        public int Quantity
+        {
+            get { return quantity; }
+            set { productId = value; }
+        }
+        public CartItem(
+            int productId)
+        {
+            this.ProductId = productId;
+        }
 
     }
 }
