@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
 namespace MarktVille.Models
 {
+    [Table("Products")]
     public class Product
     {
         public int ProductId { get; set; }

@@ -20,7 +20,7 @@ namespace MarktVille.Controllers
         public IActionResult Index()
         {
             var model = new HomeIndexViewModel();
-            model.Products = _context.Products.ToArray();
+            model.Products = _context.Products.ToList();
             model.Stores = _context.Stores.ToArray();
             return View(model);
         }

@@ -10,9 +10,11 @@
 <div class="container" style="display: flex; justify-content: space-around">
 
     <div class=" col-6" style="background-color: transparent; margin-top: 50px">
+
         @foreach (var product in Model.Products)
         {
-        <img class="img-fluid" src="@product.LargeImage" />
+            <img class="img-fluid" src="@product.LargeImage" />
+
         }
 
     </div>
@@ -20,13 +22,13 @@
     <div class=" col-6" style="background-color: transparent; margin: 0px 30px; padding-top: 50px;">
         @foreach (var product in Model.Products)
         {
-        <p style="font-size: 1.75rem">@product.Name</p>
-        <p style="font-weight: 400; font-size: 1.05rem">@product.ShortDescription</p>
-        <p>Vendido e entregue por </p>
-        <p style="font-weight: 700; font-size: 2rem">R$@product.SellingPrice.ToString("N2")</p>
-        <p>Descrição do Produto @product.Details</p>
+            <p style="font-size: 1.75rem">@product.Name</p>
+            <p style="font-weight: 400; font-size: 1.05rem">@product.ShortDescription</p>
+            <p>Vendido e entregue por </p>
+            <p style="font-weight: 700; font-size: 2rem">R$@product.SellingPrice.ToString("N2")</p>
+            <p>Descrição do Produto @product.Details</p>
 
-        <button type="button" class="btn-square">Comprar</button>
+            <button type="button" class="btn-square">Comprar</button>
         }
     </div>
 </div>

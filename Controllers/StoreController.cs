@@ -19,7 +19,7 @@ namespace MarktVille.Controllers
         {
             var model = new HomeIndexViewModel();
             model.SelectStore = id;
-            model.Products = _context.Products.ToArray();
+            model.Products = _context.Products.ToList();
             model.Stores = _context.Stores.ToArray();
 
 
@@ -29,7 +29,7 @@ namespace MarktVille.Controllers
 
             model.Products = model.Products
                 .Where(p => p.StoreId == id)
-                .ToArray();
+                .ToList();
 
             return View(model);
         }

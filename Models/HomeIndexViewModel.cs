@@ -7,7 +7,7 @@ namespace MarktVille.Models
 {
     public class HomeIndexViewModel
     {
-        public Product[] Products { get; set; }
+        public List<Product> Products { get; set; }
 
         public Category[] Categories { get; set; }
 
