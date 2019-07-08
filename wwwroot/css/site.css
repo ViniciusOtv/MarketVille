@@ -117,14 +117,15 @@ body {
 
     .btn-square:hover {
         background-color: white;
-        color: rgb(58,58,58);
+        color: black !important;
+        font-weight: 800;
         border: 2px solid rgb(58,58,58);
     }
 
     .btn-square:focus {
         box-shadow: 0 1px 15px rgb(58,58,58);
         background-color: white;
-        color: rgb(48,48,48);
+        color: rgb(48,48,48)!important;
         font-weight: 800;
     }
 

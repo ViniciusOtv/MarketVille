@@ -53,7 +53,7 @@ namespace MarktVille.Models
 
         public decimal GetTotalPrice(Product product)
         {
-            var price = product.Price;
+            var price = product.SellingPrice;
 
             var TotalPrice = price * QuantityItens;
 

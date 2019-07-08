@@ -19,18 +19,10 @@ namespace MarktVille.Controllers
         public IActionResult Index(int id)
         {
             var model = new HomeIndexViewModel();
-
-            model.ProductDetails = id;
             model.Products = _context.Products.ToArray();
 
-            if (model.ProductDetails == 0)
-            {
-                ViewBag.message = "Não há produtos";
-                
-            }
-
             model.Products = model.Products
-                .Where(x => x.ProductId == model.ProductDetails)
+                .Where(x => x.ProductId == id)
                 .ToArray();
 
             return View(model);
