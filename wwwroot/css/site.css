@@ -59,21 +59,26 @@ body {
 }
 
 .logo-div {
-    background-color: transparent;
-    width: 50%;
+    background-color: rgb(58,58,58);
+    width: 60%;
     margin-left: 20px;
+    color: white !important;
 }
+/*div do Logo do menu do lado esquerdo*/
 
 .navbar-font-color {
     color: white !important;
     font-weight: 500;
+    font-size: 1.05rem;
 }
 
-/*.navbar-font-color:hover {
-        background-color: white;
-        color: white !important;
-        height: auto
-    }*/
+.button-card {
+    font-family: "Hurme Bold", Helvetica, Arial, sans-serif;
+    font-size: 1.05rem;
+    width: auto;
+    color: white !important;
+    font-weight: 500;
+}
 
 .carousel-information {
     margin-top: 10px;
@@ -91,9 +96,9 @@ body {
 }
 
 .btn-square {
-    background-color: rgb(58,58,58); /* Green */
+    background-color: rgb(58,58,58);
     border: 2px solid white;
-    color: white;
+    color: white !important;
     padding: 10px 40px;
     text-align: center;
     text-decoration: none;
@@ -112,38 +117,39 @@ body {
 
     .btn-square:hover {
         background-color: white;
-        color: rgb(58,58,58);
+        color: black !important;
+        font-weight: 800;
         border: 2px solid rgb(58,58,58);
     }
+
     .btn-square:focus {
         box-shadow: 0 1px 15px rgb(58,58,58);
         background-color: white;
-        color: rgb(48,48,48);
+        color: rgb(48,48,48)!important;
         font-weight: 800;
     }
 
 .div-product {
-    margin-left: 30px;
+    margin-left: 5px;
     margin-top: 20px;
     box-shadow: 0 1px 15px rgba(128, 128, 128, 0.3);
 }
+
 .div-product-store {
-    margin-left: 5px;
     margin-top: 20px;
     box-shadow: 0 1px 15px rgba(128, 128, 128, 0.3);
     height: auto;
 }
 
-.div-logo-store 
-{
+.div-logo-store {
     position: absolute;
     left: 70px;
     top: 200px;
     z-index: 1;
 }
-@media (max-width: 1024px)
-{
-    .div-logo-store{
+
+@media (max-width: 1024px) {
+    .div-logo-store {
         width: 800px;
         position: absolute;
         left: 100px;
@@ -154,3 +160,51 @@ body {
 .card-product-shadow {
     box-shadow: 0 1px 15px rgba(128, 128, 128, 0.3);
 }
+
+.row-equal > div[class*='col-'] {
+    display: flex;
+    flex: 1 0 auto;
+}
+
+.product-card-text {
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: #3d3d3d;
+}
+
+.product-card-title {
+    color: rgb(58,58,58);
+    font-weight: 700;
+    font-size: 1.25rem;
+}
+
+.product-card-subtitle {
+    font-size: 1.05rem;
+    font-weight: 500;
+    color: #3d3d3d
+}
+
+.icon-card {
+    margin-left: 10px;
+    display: flex;
+}
+
+.icon-card:hover{
+    color: orange;
+}
+
+.icon-card:focus{
+    background-color: orange
+}
+
+.heart-icon-card {
+    position: absolute; 
+    z-index: 1;
+    color: white;
+    font-size: 1.75rem; 
+    margin: 10px 10px; 
+    display: flex;
+}
+    .heart-icon-card:hover {
+        color: rgb(211,80,80);
+    }

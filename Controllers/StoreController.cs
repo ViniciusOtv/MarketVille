@@ -15,10 +15,22 @@ namespace MarktVille.Controllers
         {
             _context = context;
         }
-        public IActionResult Index()
+        public IActionResult Index(int id)
         {
             var model = new HomeIndexViewModel();
+            model.SelectStore = id;
             model.Products = _context.Products.ToArray();
+            model.Stores = _context.Stores.ToArray();
+
+
+            model.Stores = model.Stores
+                .Where(x => x.StoreId == id)
+                .ToArray();
+
+            model.Products = model.Products
+                .Where(p => p.StoreId == id)
+                .ToArray();
+
             return View(model);
         }
     }

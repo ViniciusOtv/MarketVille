@@ -14,41 +14,63 @@
               asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute"
               crossorigin="anonymous"
               integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" />
+        <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     </environment>
     <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/css/all.css" />
+    <link rel="stylesheet" href="~/css/all.min.css" />
+    <link rel="stylesheet" href="~/css/solid.css" />
+
 </head>
 <body style="background-color: white;">
     <header style="background-color: rgb(58, 58, 58)">
-        <div class="container">
+        <div class="container-fluid">
             <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light">
-                <div class="container">
+                <div class="container-fluid">
                     <div class="logo-div"><a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Vandora</a></div>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                             aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
-                    <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+                    <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse" style="margin-left: 130px">
                         <ul class="navbar-nav flex-grow-1">
                             <li class="nav-item">
                                 <a class="nav-link navbar-font-color" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link navbar-font-color" asp-area="" asp-controller="Home" asp-action="Index">Quem Somos</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link navbar-font-color" asp-area="" asp-controller="Home" asp-action="Index">Nosso Parceiros</a>
-                            </li>
-                            <li class="nav-item">
                                 <a class="nav-link navbar-font-color" asp-area="" asp-controller="Home" asp-action="Index">Localidades</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link navbar-font-color" asp-area="" asp-controller="Product" asp-action="Index">Produtos</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link navbar-font-color" asp-area="" asp-controller="Home" asp-action="Index">Lojas</a>
                             </li>
                         </ul>
                     </div>
                 </div>
+
+                <div class="button-card" style="margin-right: 20px">
+                    <a style="color: white" href="/Checkout">
+                        <img src="~/imagens/cart.png" />
+                    </a>
+                </div>
+                <div class="button-card">
+                    <a style="color: white" href="/Login">
+                        Entrar
+                    </a>
+                </div>
+                <div class="button-card">
+                    <a style="color: white; margin-left: 30px" href="/Register">
+                        Cadastrar
+                    </a>
+                </div>
+
             </nav>
         </div>
     </header>
 
-    <div class="container">
+    <div class="container-fluid">
         <partial name="_CookieConsentPartial" />
         <main role="main" class="pb-3">
             @RenderBody()
@@ -138,7 +160,7 @@
             </div>
             <!-- Footer links -->
 
-            <hr>
+            <hr style="background-color: black">
 
             <!-- Grid row -->
             <div class="row d-flex align-items-center">
@@ -147,7 +169,7 @@
                 <div class="col-md-7 col-lg-8">
 
                     <!--Copyright-->
-                    <p class="text-center text-md-left" style="color: black">
+                    <p style="color: white" class="text-center text-md-left">
                         © 2019 Copyright:
                         Vandora
                     </p>
@@ -162,22 +184,22 @@
                         <ul class="list-unstyled list-inline">
                             <li class="list-inline-item">
                                 <a class="btn-floating btn-sm rgba-white-slight mx-1">
-                                    <i class="fab fa-facebook-f"></i>
+                                    <i style="color: white; font-size: 1.75rem;" class="fab fa-google"></i>
                                 </a>
                             </li>
                             <li class="list-inline-item">
                                 <a class="btn-floating btn-sm rgba-white-slight mx-1">
-                                    <i class="fab fa-twitter"></i>
+                                    <i style="color: white; font-size: 1.75rem;" class="fab fa-twitter"></i>
                                 </a>
                             </li>
                             <li class="list-inline-item">
                                 <a class="btn-floating btn-sm rgba-white-slight mx-1">
-                                    <i class="fab fa-google-plus-g"></i>
+                                    <i style="color: white; font-size: 1.75rem;" class="fab fa-google-plus-g"></i>
                                 </a>
                             </li>
                             <li class="list-inline-item">
                                 <a class="btn-floating btn-sm rgba-white-slight mx-1">
-                                    <i class="fab fa-linkedin-in"></i>
+                                    <i style="color: white; font-size: 1.75rem;" class="fab fa-linkedin-in"></i>
                                 </a>
                             </li>
                         </ul>
@@ -198,6 +220,9 @@
     <environment include="Development">
         <script src="~/lib/jquery/dist/jquery.js"></script>
         <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.js"></script>
+        <script src="jquery.min.js"></script>
+        <script src="owlcarousel/owl.carousel.min.js"></script>
+
     </environment>
     <environment exclude="Development">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"

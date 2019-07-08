@@ -1,0 +1,45 @@
+﻿@{
+    ViewData["Title"] = "Index";
+}
+@model HomeIndexViewModel
+
+
+<div class="container-fluid">
+
+    <div class="row">
+        <div class="col-3" style="background-color: rgb(58,58,58); color: white; max-height: 500px; margin-top: 50px">
+            <p>categorias</p>
+        </div>
+
+        <div class="col-9">
+            <div class="container">
+                <div class="row">
+                    @foreach (var product in Model.Products)
+                    {
+                        <div class="card mb-4 bg-white rounded div-product" style="margin-left: 30px; margin-top: 50px">
+
+                            <img class="img-fluid" src="@product.Image" />
+                            <i class="far fa-heart heart-icon-card"></i>
+                            <div class="card-body card-product-shadow">
+                                <p class="card-title product-card-title">@product.Name</p>
+                                <p class="card-text product-card-text">R$@product.SellingPrice</p>
+                                <p class="card-subtitle product-card-subtitle">@product.ShortDescription</p>
+
+                                <hr style="background-color: black">
+
+                                <div class="row icon-card">
+                                    <i class="far fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

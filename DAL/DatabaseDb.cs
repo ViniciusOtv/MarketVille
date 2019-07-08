@@ -26,7 +26,6 @@ namespace MarktVille.DAL
         public DbSet<Supplier> Suppliers { get; set; }
 
         public DbSet<SubCategory> SubCategory { get; set; }
-
     }
 
 }
