@@ -4,23 +4,37 @@ using System.Linq;
 using System.Threading.Tasks;
 using MarktVille.DAL;
 using MarktVille.Models;
+using MarktVille.Repository;
 using Microsoft.AspNetCore.Mvc;
 
 namespace MarktVille.Controllers
 {
     public class ProductController : Controller
     {
-        private readonly DatabaseDb _context;
+        private List<Product> _product;
 
-        public ProductController(DatabaseDb context)
+        private IProductRepository _productRepository;
+        public ProductController(IProductRepository productRepository)
         {
-            _context = context;
+            _productRepository = productRepository;
         }
+     
 
         public IActionResult Index()
         {
             var model = new HomeIndexViewModel();
-            model.Products = _context.Products.OrderByDescending(x => x.ProductId).ToList();
+            _product = _productRepository.GetAllProducts().ToList();
+            model.Products = _product;
+
+            return View(model);
+        }
+
+        public IActionResult ProductDetails(int id)
+        {
+            var model = new HomeIndexViewModel();
+            _product = _productRepository.GetProductById(id).ToList();
+            model.Products = _product;
+
             return View(model);
         }
     }

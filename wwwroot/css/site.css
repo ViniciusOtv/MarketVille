@@ -125,7 +125,7 @@ body {
     .btn-square:focus {
         box-shadow: 0 1px 15px rgb(58,58,58);
         background-color: white;
-        color: rgb(48,48,48)!important;
+        color: rgb(48,48,48) !important;
         font-weight: 800;
     }
 
@@ -147,6 +147,18 @@ body {
     top: 200px;
     z-index: 1;
 }
+
+.name-store {
+    font-size: 1.50rem;
+    display: none;
+}
+
+    .name-store:hover {
+        display: block;
+        font-weight: 800;
+        font-size: 1.50rem;
+        color: red;
+    }
 
 @media (max-width: 1024px) {
     .div-logo-store {
@@ -189,22 +201,23 @@ body {
     display: flex;
 }
 
-.icon-card:hover{
-    color: orange;
-}
+    .icon-card:hover {
+        color: orange;
+    }
 
-.icon-card:focus{
-    background-color: orange
-}
+    .icon-card:focus {
+        background-color: orange
+    }
 
 .heart-icon-card {
-    position: absolute; 
+    position: absolute;
     z-index: 1;
     color: white;
-    font-size: 1.75rem; 
-    margin: 10px 10px; 
+    font-size: 1.75rem;
+    margin: 10px 10px;
     display: flex;
 }
+
     .heart-icon-card:hover {
         color: rgb(211,80,80);
     }

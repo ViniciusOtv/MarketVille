@@ -1,37 +1,79 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Threading.Tasks;
+using Dapper;
 using MarktVille.DAL;
 using MarktVille.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration;
+using MarktVille.Repository;
 
 namespace MarktVille.Controllers
 {
     public class StoreController : Controller
     {
-        private readonly DatabaseDb _context;
-        public StoreController(DatabaseDb context)
+        private List<Store> _stores;
+        private List<Store> _prdStore;
+        private List<Product> _selectProductStore;
+
+        private IStoreRepository _storeRepository;
+
+
+        public StoreController(IStoreRepository storeRepository)
         {
-            _context = context;
+            _storeRepository = storeRepository;
         }
-        public IActionResult Index(int id)
+
+
+
+        public IActionResult Index()
         {
-            var model = new HomeIndexViewModel();
-            model.SelectStore = id;
-            model.Products = _context.Products.ToList();
-            model.Stores = _context.Stores.ToArray();
+            try
+            {
+                var model = new HomeIndexViewModel();
+                _stores = _storeRepository.GetAllStores().ToList();
+                model.Stores = _stores;
 
+                if (_stores.Count() == 0)
+                {
+                    return View(ViewBag.Message = "Não há lojas para serem exibidas");
+                }
 
-            model.Stores = model.Stores
-                .Where(x => x.StoreId == id)
-                .ToArray();
+                return View(model);
+            }
 
-            model.Products = model.Products
-                .Where(p => p.StoreId == id)
-                .ToList();
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
 
-            return View(model);
+        public IActionResult StoreDetail(int id)
+        {
+            try
+            {
+                _prdStore = _storeRepository.GetStoreById(id).ToList();
+                _selectProductStore = _storeRepository.GetProductStore(id).ToList();
+                var model = new HomeIndexViewModel();
+                model.Stores = _prdStore;
+                model.Products = _selectProductStore;
+
+                if (_prdStore.Count() == 0)
+                {
+
+                    return View(ViewBag.Message = "Não há lojas para serem exibidas");
+                }
+
+                return View(model);
+            }
+
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
         }
     }
 }

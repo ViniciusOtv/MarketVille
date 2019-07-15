@@ -12,6 +12,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.AspNetCore.Session;
+using MarktVille.Repository;
 
 namespace MarktVille
 {
@@ -21,6 +22,16 @@ namespace MarktVille
         {
             Configuration = configuration;
         }
+
+        public Startup(IProductRepository productRepository, IStoreRepository storeRepository)
+        {
+            ProductRepository = productRepository;
+            StoreRepository = storeRepository;
+        }
+
+        public IProductRepository ProductRepository { get; }
+
+        public IStoreRepository StoreRepository { get; }
 
         public IConfiguration Configuration { get; }
 
@@ -43,6 +54,8 @@ namespace MarktVille
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
             services.AddDistributedMemoryCache();
             services.AddSession();
+            services.AddSingleton<IProductRepository, ProductRepository>();
+            services.AddSingleton<IStoreRepository, StoreRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

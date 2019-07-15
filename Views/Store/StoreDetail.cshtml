@@ -1,0 +1,147 @@
+﻿@{
+    Layout = null;
+}
+@model HomeIndexViewModel
+<p>
+    @ViewBag.Message
+</p>
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Vandora</title>
+
+    <environment include="Development">
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+    </environment>
+    <environment exclude="Development">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+              asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
+              asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute"
+              crossorigin="anonymous"
+              integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" />
+    </environment>
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/css/all.css" />
+    <link rel="stylesheet" href="~/css/all.min.css" />
+    <link rel="stylesheet" href="~/css/solid.css" />
+</head>
+
+<body style="background-color: white;">
+    <header style="background-color: rgb(58,58,58); border-bottom: 1px solid white;">
+        <div class="container">
+            <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light">
+                <div class="container">
+                    <div class="logo-div"><a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Vandora</a></div>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+                        <ul class="navbar-nav flex-grow-1">
+                            <li class="nav-item">
+                                <a class="nav-link navbar-font-color" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link navbar-font-color" asp-area="" asp-controller="Home" asp-action="Index">Localidades</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link navbar-font-color" asp-area="" asp-controller="Home" asp-action="Index">Produtos</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link navbar-font-color" asp-area="" asp-controller="Home" asp-action="Index">Lojas</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+
+    </header>
+
+    <div style="background-color: rgb(58,58,58); height: 250px; padding-top: 30px">
+        <p style="color: white; text-align: center">Logo Vandora</p>
+    </div>
+    <div class="container">
+        <div class="container" style="box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22); top: 200px; z-index: 1; position: absolute;">
+            <div class="row" style="background-color: #ededed;">
+
+                @foreach (var store in Model.Stores)
+                {
+                    <div class="col-md-12">
+                        <div class="container col-4" style="padding: 30px">
+                            <div class="card">
+                                <img class="img-fluid" src="@store.CoverImage" />
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+            <div class="container-fluid">
+
+                <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                    <a class="navbar-brand" href="#">Navbar</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Alterna navegação">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                            <li class="nav-item active">
+                                <a class="nav-link" href="#">Home <span class="sr-only">(Página atual)</span></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Link</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link disabled" href="#">Desativado</a>
+                            </li>
+                        </ul>
+                        <form class="form-inline my-2 my-lg-0">
+                            <input class="form-control mr-sm-2" type="search" placeholder="Pesquisar">
+                            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Pesquisar</button>
+                        </form>
+                    </div>
+                </nav>
+
+            </div>
+
+            <div class="row" style="margin-left: 80px; height: auto; display: flex; justify-content: space-around">
+
+                @foreach (var product in Model.Products)
+                {
+                    <div class="card mb-4 bg-white rounded div-product-store" style="margin-top: 80px">
+
+                        <img class="img-fluid" src="@product.Image" />
+                        <i class="far fa-heart heart-icon-card"></i>
+                        <div class="card-body card-product-shadow">
+                            <p class="card-title product-card-title">@product.Name</p>
+                            <p class="card-text product-card-text">R$@product.SellingPrice</p>
+                            <p class="card-subtitle product-card-subtitle">@product.ShortDescription</p>
+
+                            <hr style="background-color: black">
+
+                            <div class="row icon-card">
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                        </div>
+
+                    </div>
+                }
+
+            </div>
+
+        </div>
+    </div>
+
+</body>
+
+</html>

@@ -13,7 +13,7 @@ namespace MarktVille.Models
 
         public Supplier[] Suppliers { get; set; }
 
-        public Store[] Stores { get; set; }
+        public List<Store> Stores { get; set; }
 
         public Location[] Locations { get; set; }
 
