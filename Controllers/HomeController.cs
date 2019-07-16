@@ -13,6 +13,7 @@ namespace MarktVille.Controllers
     public class HomeController : Controller
     {
         private List<Product> _products;
+        private List<Product> _prdCarousel;
         private List<Store> _stores;
 
         private IProductRepository _productRepository;
@@ -27,10 +28,11 @@ namespace MarktVille.Controllers
         }
         public IActionResult Index()
         {
-            _products = _productRepository.GetAllProducts().ToList();
+            //_products = _productRepository.GetAllProducts().ToList();
             _stores = _storeRepository.GetTopStore().ToList();
+            _prdCarousel = _productRepository.GetProductForCarousel().ToList();
             var model = new HomeIndexViewModel();
-            model.Products = _products;
+            model.Products = _prdCarousel;
             model.Stores = _stores;
             return View(model);
 

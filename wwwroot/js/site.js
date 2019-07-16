@@ -2,24 +2,40 @@
 // for details on configuring this project to bundle and minify static web assets.
 
 // Write your JavaScript code.
-//$('.carousel.carousel-multi-item.v-2 .carousel-item').each(function(){
-//  var next = $(this).next();
-//  if (!next.length) {
-//    next = $(this).siblings(':first');
-//  }
-//  next.children(':first-child').clone().appendTo($(this));
-
-//  for (var i=0;i<4;i++) {
-//    next=next.next();
-//    if (!next.length) {
-//      next=$(this).siblings(':first');
-//    }
-//    next.children(':first-child').clone().appendTo($(this));
-//  }
-//});
 
 $(document).ready(function () {
     $('.your-class').slick({
-        dots: true
-    });
+
+        dots: true,
+        infinite: false,
+        speed: 300,
+        slidesToShow: 4,
+        slidesToScroll: 4,
+        responsive: [
+            {
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 3,
+                    infinite: true,
+                    dots: true
+                }
+            },
+            {
+                breakpoint: 600,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 2
+                }
+            },
+            {
+                breakpoint: 480,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1
+                }
+            }
+          
+        ]
+    })
 });

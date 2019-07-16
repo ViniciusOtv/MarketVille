@@ -82,89 +82,53 @@
     </div>
 
 
-    <div class="container-fluid" style="background-color: rgb(58,58,58); margin-top: 150px; height: auto">
+    <div class="container" style="background-color: rgb(58,58,58); margin-top: 150px; height: auto">
 
         <p style="color: white; padding: 10px; text-align: center">
             Veja alguns dos nossos produtos <bold> direto da 25 de Março</bold>
         </p>
 
         <div class="row" style="background-color: #ededed; padding: 20px;">
-            <div class="container-fluid">
+            <div class="container">
+                <div id="slideCard">
+                    <div class="your-class">
+                        @foreach (var product in Model.Products)
+                        {
+                            <div class="card mb-4 bg-white rounded div-product" style="margin-right: 20px; margin-top: 50px;">
 
-                <div class="your-class">
-                    <div>your content</div>
-                    <div>your content</div>
-                    <div>your content</div>
+                                <img class="img-fluid" src="@product.Image" />
+                                <i class="far fa-heart heart-icon-card"></i>
+                                <div class="card-body card-product-shadow">
+                                    <p class="card-title product-card-title">@product.Name</p>
+                                    <p class="card-text product-card-text">R$@product.SellingPrice</p>
+                                    <p class="card-subtitle product-card-subtitle">@product.ShortDescription</p>
+
+                                    <hr style="background-color: black">
+
+                                    <div class="row icon-card">
+                                        <i class="far fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    </div>
                 </div>
 
-
-                @*<div id="slideCard" class="carousel slide" data-ride="carousel">
-            <div class="carousel-inner  w-100 mx-auto">
-                <div class="carousel-item col-md-4 active">
-                    <div class="card" style="box-shadow: 0 5px 15px rgba(58, 58, 58, 0.5); margin-left: 20px">
-                        <img class="img-fluid" src="https://source.unsplash.com/c2x94-kmQcQ/230x255" />
-                        <div class="card-body card-product-shadow">
-                            <p class="card-text">
-                                Tênis Nike
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item col-md-4">
-                    <div class="card" style="box-shadow: 0 5px 15px rgba(58, 58, 58, 0.5); margin-left: 20px">
-                        <img class="img-fluid" src="https://source.unsplash.com/c2x94-kmQcQ/230x255" />
-                        <div class="card-body card-product-shadow">
-                            <p class="card-text">
-                                Tênis Nike
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item col-md-4">
-                    <div class="card" style="box-shadow: 0 5px 15px rgba(58, 58, 58, 0.5); margin-left: 20px">
-                        <img class="img-fluid" src="https://source.unsplash.com/c2x94-kmQcQ/230x255" />
-                        <div class="card-body card-product-shadow">
-                            <p class="card-text">
-                                Tênis Nike
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item col-md-4">
-                    <div class="card" style="box-shadow: 0 5px 15px rgba(58, 58, 58, 0.5); margin-left: 20px">
-                        <img class="img-fluid" src="https://source.unsplash.com/c2x94-kmQcQ/230x255" />
-                        <div class="card-body card-product-shadow">
-                            <p class="card-text">
-                                Tênis Nike
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item col-md-4">
-
-                    <div class="card" style="box-shadow: 0 5px 15px rgba(58, 58, 58, 0.5); margin-left: 20px">
-                        <img class="img-fluid" src="https://source.unsplash.com/c2x94-kmQcQ/230x255" />
-                        <div class="card-body card-product-shadow">
-                            <p class="card-text">
-                                Tênis Nike
-                            </p>
-                        </div>
-                    </div>
-                </div>
             </div>
-
-
-            <div class="container" style="text-align: center; margin-top: 20px; background-color: red">
-                <a class="carousel-control-prev" href="#slideCard" data-slide="prev">
+            <div class="container" style="text-align: center;">
+                <a class="" href="#slideCard" data-slide="prev">
                     <span type="button" class="btn-square" style="text-align: center"><i class="fas fa-chevron-left"></i></span>
                 </a>
-                <a class="carousel-control-next" href="#slideCard" data-slide="next">
+                <a class="" href="#slideCard" data-slide="next">
                     <span type="button" class="btn-square" style="text-align: center"><i class="fas fa-chevron-right"></i></span>
                 </a>
             </div>
-        </div>*@
-            </div>
         </div>
-
     </div>
+
+
 </div>

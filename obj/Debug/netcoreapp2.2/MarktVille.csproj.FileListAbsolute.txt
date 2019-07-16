@@ -1,4 +1,3 @@
-C:\Users\vinicius.silva\source\repos\Vandora_MarktVille\MarktVille\obj\Debug\netcoreapp2.2\MarktVille.RazorAssemblyInfo.cache
 C:\Users\vinicius.silva\source\repos\Vandora_MarktVille\MarktVille\bin\Debug\netcoreapp2.2\MarktVille.deps.json
 C:\Users\vinicius.silva\source\repos\Vandora_MarktVille\MarktVille\bin\Debug\netcoreapp2.2\MarktVille.runtimeconfig.json
 C:\Users\vinicius.silva\source\repos\Vandora_MarktVille\MarktVille\bin\Debug\netcoreapp2.2\MarktVille.runtimeconfig.dev.json
@@ -6,8 +5,8 @@ C:\Users\vinicius.silva\source\repos\Vandora_MarktVille\MarktVille\bin\Debug\net
 C:\Users\vinicius.silva\source\repos\Vandora_MarktVille\MarktVille\bin\Debug\netcoreapp2.2\MarktVille.pdb
 C:\Users\vinicius.silva\source\repos\Vandora_MarktVille\MarktVille\bin\Debug\netcoreapp2.2\MarktVille.Views.dll
 C:\Users\vinicius.silva\source\repos\Vandora_MarktVille\MarktVille\bin\Debug\netcoreapp2.2\MarktVille.Views.pdb
-C:\Users\vinicius.silva\source\repos\Vandora_MarktVille\MarktVille\obj\Debug\netcoreapp2.2\MarktVille.csprojAssemblyReference.cache
 C:\Users\vinicius.silva\source\repos\Vandora_MarktVille\MarktVille\obj\Debug\netcoreapp2.2\MarktVille.csproj.CoreCompileInputs.cache
+C:\Users\vinicius.silva\source\repos\Vandora_MarktVille\MarktVille\obj\Debug\netcoreapp2.2\MarktVille.RazorAssemblyInfo.cache
 C:\Users\vinicius.silva\source\repos\Vandora_MarktVille\MarktVille\obj\Debug\netcoreapp2.2\MarktVille.RazorAssemblyInfo.cs
 C:\Users\vinicius.silva\source\repos\Vandora_MarktVille\MarktVille\obj\Debug\netcoreapp2.2\MarktVille.AssemblyInfoInputs.cache
 C:\Users\vinicius.silva\source\repos\Vandora_MarktVille\MarktVille\obj\Debug\netcoreapp2.2\MarktVille.AssemblyInfo.cs
@@ -32,3 +31,4 @@ C:\Users\vinicius.silva\source\repos\Vandora_MarktVille\MarktVille\obj\Debug\net
 C:\Users\vinicius.silva\source\repos\Vandora_MarktVille\MarktVille\obj\Debug\netcoreapp2.2\MarktVille.dll
 C:\Users\vinicius.silva\source\repos\Vandora_MarktVille\MarktVille\obj\Debug\netcoreapp2.2\MarktVille.pdb
 C:\Users\vinicius.silva\source\repos\Vandora_MarktVille\MarktVille\obj\Debug\netcoreapp2.2\MarktVille.csproj.CopyComplete
+C:\Users\vinicius.silva\source\repos\Vandora_MarktVille\MarktVille\obj\Debug\netcoreapp2.2\MarktVille.csprojAssemblyReference.cache

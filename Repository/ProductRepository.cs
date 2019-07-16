@@ -14,7 +14,7 @@ namespace MarktVille.Repository
 
         private IConfiguration _config;
         private List<Product> _product;
-        
+
 
 
         public ProductRepository(IConfiguration configuration)
@@ -51,6 +51,18 @@ namespace MarktVille.Repository
             }
 
         }
-       
+
+        public IEnumerable<Product> GetProductForCarousel()
+        {
+            using (SqlConnection connection = new SqlConnection(
+                _config.GetConnectionString("Ville_dev")))
+            {
+                var prd = connection.Query<Product>(
+                    "SELECT TOP 10 Name, SellingPrice, Image FROM dbo.Products ORDER BY ProductId");
+                _product = prd.ToList();
+                return _product;
+            }
+        }
+
     }
 }
