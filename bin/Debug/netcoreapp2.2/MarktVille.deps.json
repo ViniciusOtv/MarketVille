@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.2",
-    "signature": "f3e14a00506104d3a32df4b0da356b99e34d729e"
+    "signature": "ae2e9838ecc3bd9a25ebd7c61a7cf1def4fe6c4e"
   },
   "compilationOptions": {
     "defines": [
@@ -34,6 +34,7 @@
           "Migrations": "1.0.1",
           "Newtonsoft.Json": "12.0.2",
           "Owl.Carousel.2": "2.0.1",
+          "bootstrap.sass": "4.3.1",
           "jQuery": "3.4.1"
         },
         "runtime": {
@@ -41,6 +42,12 @@
         },
         "compile": {
           "MarktVille.dll": {}
+        }
+      },
+      "bootstrap.sass/4.3.1": {
+        "dependencies": {
+          "jQuery": "3.4.1",
+          "popper.js": "1.14.0"
         }
       },
       "Dapper/1.60.6": {
@@ -271,6 +278,7 @@
           "jQuery": "3.4.1"
         }
       },
+      "popper.js/1.14.0": {},
       "System.Composition/1.0.31": {
         "dependencies": {
           "System.Composition.AttributedModel": "1.0.31",
@@ -3598,6 +3606,13 @@
       "serviceable": false,
       "sha512": ""
     },
+    "bootstrap.sass/4.3.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-K75hC5YtxsmvSDPiVJNQ3ykH+yrdFyylhbM+dQPHUVUBJk16ZTqKjcTJmgIY9Zmbpqs78fk5K6HV8UCBy22Xjg==",
+      "path": "bootstrap.sass/4.3.1",
+      "hashPath": "bootstrap.sass.4.3.1.nupkg.sha512"
+    },
     "Dapper/1.60.6": {
       "type": "package",
       "serviceable": true,
@@ -3723,6 +3738,13 @@
       "sha512": "sha512-fOyY88ET9CthKZOPgQTSLq7UwM86bVybnGoi973lFUHjYr/dkszqk2eAFVhuOYpvb6cRTK4Xg46OndVIBE0kRg==",
       "path": "owl.carousel.2/2.0.1",
       "hashPath": "owl.carousel.2.2.0.1.nupkg.sha512"
+    },
+    "popper.js/1.14.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-SPxZdXknelgQ015wey7GMZvsVdt/SyEmHYORhEp5k/uF9MUk9DPtkn+6dR98fud2hVWJjZm9KKr474+r7WQt+A==",
+      "path": "popper.js/1.14.0",
+      "hashPath": "popper.js.1.14.0.nupkg.sha512"
     },
     "System.Composition/1.0.31": {
       "type": "package",

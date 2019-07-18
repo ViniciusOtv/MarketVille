@@ -51,31 +51,12 @@
                 {
 
                     <div class="card mb-4" style="margin-left: 30px; box-shadow: 0 1px 15px rgba(128, 128, 128, 0.3);">
-                        <a href="/store/index/@store.StoreId">
+                        <a href="/store/storedetail/@store.StoreId">
                             <img class="img-fluid" src="@store.Image" />
+                            <p class="name-store">@store.Name</p>
                         </a>
-                        <p class="name-store">@store.Name</p>
                     </div>
                 }
-
-                @*<div class="card mb-4 bg-white rounded" style="margin-left: 30px; box-shadow: 0 1px 15px rgba(128, 128, 128, 0.3);">
-                        <img class="img-fluid" src="~/imagens/nike.png" />
-                    </div>
-
-                    <div class="card mb-4 bg-white rounded" style="margin-left: 30px; box-shadow: 0 1px 15px rgba(128, 128, 128, 0.3);">
-                        <img class="img-fluid" src="https://source.unsplash.com/pO2bglTMJpo/230x255" />
-                    </div>
-
-
-                    <div class="card mb-4 bg-white rounded" style="margin-left: 30px; box-shadow: 0 1px 15px rgba(128, 128, 128, 0.3);">
-                        <img class="img-fluid" src="https://source.unsplash.com/c2x94-kmQcQ/230x255" />
-                    </div>
-
-
-                    <div class="card mb-4 bg-white rounded" style="margin-left: 30px; box-shadow: 0 1px 15px rgba(128, 128, 128, 0.3);">
-                        <img class="img-fluid" src="~/imagens/aber.png" />
-                    </div>*@
-
 
             </div>
         </div>
@@ -95,7 +76,7 @@
                         @foreach (var product in Model.Products)
                         {
                             <div class="card mb-4 bg-white rounded div-product" style="margin-right: 20px; margin-top: 50px;">
-
+                                @*<a href="/product/productdetails/@product.ProductId" style="text-decoration: none; ">*@
                                 <img class="img-fluid" src="@product.Image" />
                                 <i class="far fa-heart heart-icon-card"></i>
                                 <div class="card-body card-product-shadow">
@@ -113,6 +94,7 @@
                                         <i class="far fa-star"></i>
                                     </div>
                                 </div>
+                                @*</a>*@
                             </div>
                         }
                     </div>
@@ -120,10 +102,10 @@
 
             </div>
             <div class="container" style="text-align: center;">
-                <a class="" href="#slideCard" data-slide="prev">
+                <a href="#slideCard" data-slide="prev">
                     <span type="button" class="btn-square" style="text-align: center"><i class="fas fa-chevron-left"></i></span>
                 </a>
-                <a class="" href="#slideCard" data-slide="next">
+                <a href="#slideCard" data-slide="next">
                     <span type="button" class="btn-square" style="text-align: center"><i class="fas fa-chevron-right"></i></span>
                 </a>
             </div>

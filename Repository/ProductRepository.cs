@@ -58,11 +58,21 @@ namespace MarktVille.Repository
                 _config.GetConnectionString("Ville_dev")))
             {
                 var prd = connection.Query<Product>(
-                    "SELECT TOP 10 Name, SellingPrice, Image FROM dbo.Products ORDER BY ProductId");
+                    "SELECT TOP 10 ProductId, Name, SellingPrice, Image FROM dbo.Products ORDER BY ProductId");
                 _product = prd.ToList();
                 return _product;
             }
         }
+
+        //public IEnumerable<Product> GetProductSimilar()
+        //{
+        //    using (SqlConnection connection = new SqlConnection(
+        //        _config.GetConnectionString("Ville_dev")))
+        //    {
+        //        var similiarProduct = connection.Query<Product>(
+        //            "SELECT TOP 4 ProductId, Name, SellingPrice, Image FROM dbo.Products WHERE ")
+        //    }
+        //}
 
     }
 }
