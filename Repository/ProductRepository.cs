@@ -27,12 +27,20 @@ namespace MarktVille.Repository
             using (SqlConnection connection = new SqlConnection(
                 _config.GetConnectionString("Ville_dev")))
             {
+                try
+                {
+                    var query = connection.Query<Product>(
+                   "Select S.Name, P.ProductId, p.Name, p.ShortDescription, p.Details, " +
+                   "p.SellingPrice from Products as P JOIN Stores as S on P.StoreId = S.StoreId order by P.ProductId desc");
+                    _product = query.ToList();
+                    return _product;
 
-                var pro = connection.Query<Product>(
-                    "SELECT * FROM dbo.Products ORDER BY ProductId desc;");
+                }
+                catch (Exception)
+                {
 
-                _product = pro.ToList();
-                return _product;
+                    throw;
+                }
             }
 
         }

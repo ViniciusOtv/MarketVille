@@ -17,6 +17,8 @@ namespace MarktVille.Models
 
         public string Country { get; set; }
 
-        public string nickName { get; set; }
+        public string NickName { get; set; }
+
+        public string ImageLocality { get; set; }
     }
 }
