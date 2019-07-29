@@ -13,5 +13,7 @@ namespace MarktVille.Repository
         IEnumerable<Product> GetProductById(int id);
 
         IEnumerable<Product> GetProductForCarousel();
+
+        IEnumerable<Product> GetProductStore(int id);
     }
 }

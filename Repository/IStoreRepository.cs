@@ -12,8 +12,6 @@ namespace MarktVille.Repository
 
         IEnumerable<Store> GetStoreById(int id);
 
-        IEnumerable<Product> GetProductStore(int id);
-
         IEnumerable<Store> GetTopStore();
     }
 }

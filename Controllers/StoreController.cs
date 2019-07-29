@@ -19,11 +19,13 @@ namespace MarktVille.Controllers
         private List<Product> _selectProductStore;
 
         private IStoreRepository _storeRepository;
+        private IProductRepository _productRepository;
 
 
-        public StoreController(IStoreRepository storeRepository)
+        public StoreController(IStoreRepository storeRepository, IProductRepository productRepository)
         {
             _storeRepository = storeRepository;
+            _productRepository = productRepository;
         }
 
 
@@ -55,7 +57,7 @@ namespace MarktVille.Controllers
             try
             {
                 _prdStore = _storeRepository.GetStoreById(id).ToList();
-                _selectProductStore = _storeRepository.GetProductStore(id).ToList();
+                _selectProductStore = _productRepository.GetProductStore(id).ToList();
                 var model = new HomeIndexViewModel();
                 model.Stores = _prdStore;
                 model.Products = _selectProductStore;

@@ -14,9 +14,7 @@ namespace MarktVille.Repository
 
         private IConfiguration _config;
         private List<Product> _product;
-
-
-
+       
         public ProductRepository(IConfiguration configuration)
         {
             _config = configuration;
@@ -30,7 +28,7 @@ namespace MarktVille.Repository
                 try
                 {
                     var query = connection.Query<Product>(
-                   "Select S.Name, P.ProductId, p.Name, p.ShortDescription, p.Details, " +
+                   "Select S.Name, P.ProductId, p.Name, p.ShortDescription, p.Details, P.Image, " +
                    "p.SellingPrice from Products as P JOIN Stores as S on P.StoreId = S.StoreId order by P.ProductId desc");
                     _product = query.ToList();
                     return _product;
@@ -68,6 +66,21 @@ namespace MarktVille.Repository
                 var prd = connection.Query<Product>(
                     "SELECT TOP 10 ProductId, Name, SellingPrice, Image FROM dbo.Products ORDER BY ProductId");
                 _product = prd.ToList();
+                return _product;
+            }
+        }
+
+        public IEnumerable<Product> GetProductStore(int id)
+        {
+            using (SqlConnection connection = new SqlConnection(
+                _config.GetConnectionString("Ville_dev")))
+            {
+                var productStore = connection.Query<Product>(
+                    "Select * from dbo.Products WHERE StoreId = @StoreId",
+                    new { @StoreId = id });
+
+                _product = productStore.ToList();
+
                 return _product;
             }
         }
