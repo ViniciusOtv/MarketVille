@@ -1,18 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using MarktVille.DAL;
+﻿using MarktVille.DAL;
+using MarktVille.Repository;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.AspNetCore.Session;
-using MarktVille.Repository;
 
 namespace MarktVille
 {
@@ -23,11 +17,14 @@ namespace MarktVille
             Configuration = configuration;
         }
 
-        public Startup(IProductRepository productRepository, IStoreRepository storeRepository, ILocationRepository locationRepository)
+        public Startup(IProductRepository productRepository, IStoreRepository storeRepository, ILocationRepository locationRepository,
+            IUserRepository userRepository)
         {
             ProductRepository = productRepository;
             StoreRepository = storeRepository;
             LocationRepository = locationRepository;
+            UserRepository = userRepository;
+
         }
 
         public IProductRepository ProductRepository { get; }
@@ -35,6 +32,8 @@ namespace MarktVille
         public IStoreRepository StoreRepository { get; }
 
         public ILocationRepository LocationRepository { get;  }
+
+        public IUserRepository UserRepository { get; }
 
 
         public IConfiguration Configuration { get; }
@@ -61,6 +60,7 @@ namespace MarktVille
             services.AddSingleton<IProductRepository, ProductRepository>();
             services.AddSingleton<IStoreRepository, StoreRepository>();
             services.AddSingleton<ILocationRepository, LocationRepository>();
+            services.AddSingleton<IUserRepository, UserRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

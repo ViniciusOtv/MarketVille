@@ -9,16 +9,19 @@ namespace MarktVille.Models
     {
         public List<Product> Products { get; set; }
 
-        public Category[] Categories { get; set; }
+        public List<Category> Categories { get; set; }
 
-        public Supplier[] Suppliers { get; set; }
+        public List<Supplier> Suppliers { get; set; }
 
         public List<Store> Stores { get; set; }
 
         public List<Location> Locations { get; set; }
 
-        public ProductDetail[] ProductDetails { get; set; }
+        public List<ProductDetail> ProductDetails { get; set; }
 
-        public int SelectStore { get; set; }
+        public List<User> Users { get; set; }
+
+        public List<UserDetail> UserDetails { get; set; }
+
     }
 }

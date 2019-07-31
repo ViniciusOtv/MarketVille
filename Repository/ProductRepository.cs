@@ -22,7 +22,7 @@ namespace MarktVille.Repository
         public IEnumerable<Product> GetAllProducts()
         {
 
-            using (SqlConnection connection = new SqlConnection(
+            using (var connection = new SqlConnection(
                 _config.GetConnectionString("Ville_dev")))
             {
                 try
@@ -44,7 +44,7 @@ namespace MarktVille.Repository
         }
         public IEnumerable<Product> GetProductById(int id)
         {
-            using (SqlConnection connection = new SqlConnection(
+            using (var connection = new SqlConnection(
               _config.GetConnectionString("Ville_dev")))
             {
 
@@ -60,7 +60,7 @@ namespace MarktVille.Repository
 
         public IEnumerable<Product> GetProductForCarousel()
         {
-            using (SqlConnection connection = new SqlConnection(
+            using (var connection = new SqlConnection(
                 _config.GetConnectionString("Ville_dev")))
             {
                 var prd = connection.Query<Product>(
@@ -72,7 +72,7 @@ namespace MarktVille.Repository
 
         public IEnumerable<Product> GetProductStore(int id)
         {
-            using (SqlConnection connection = new SqlConnection(
+            using (var connection = new SqlConnection(
                 _config.GetConnectionString("Ville_dev")))
             {
                 var productStore = connection.Query<Product>(
@@ -84,16 +84,6 @@ namespace MarktVille.Repository
                 return _product;
             }
         }
-
-        //public IEnumerable<Product> GetProductSimilar()
-        //{
-        //    using (SqlConnection connection = new SqlConnection(
-        //        _config.GetConnectionString("Ville_dev")))
-        //    {
-        //        var similiarProduct = connection.Query<Product>(
-        //            "SELECT TOP 4 ProductId, Name, SellingPrice, Image FROM dbo.Products WHERE ")
-        //    }
-        //}
 
     }
 }

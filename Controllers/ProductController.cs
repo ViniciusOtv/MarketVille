@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using MarktVille.DAL;
-using MarktVille.Models;
+﻿using MarktVille.Models;
 using MarktVille.Repository;
 using Microsoft.AspNetCore.Mvc;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace MarktVille.Controllers
 {
