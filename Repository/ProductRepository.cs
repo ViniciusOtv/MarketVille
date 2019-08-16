@@ -29,7 +29,7 @@ namespace MarktVille.Repository
                 {
                     var query = connection.Query<Product>(
                    "Select S.Name, P.ProductId, p.Name, p.ShortDescription, p.Details, P.Image, " +
-                   "p.SellingPrice from Products as P JOIN Stores as S on P.StoreId = S.StoreId order by P.ProductId desc");
+                   "P.SellingPrice FROM Products as P JOIN Stores as S on P.StoreId = S.StoreId order by P.ProductId desc");
                     _product = query.ToList();
                     return _product;
 
@@ -40,7 +40,6 @@ namespace MarktVille.Repository
                     throw;
                 }
             }
-
         }
         public IEnumerable<Product> GetProductById(int id)
         {
@@ -55,7 +54,6 @@ namespace MarktVille.Repository
                 _product = pro.ToList();
                 return _product;
             }
-
         }
 
         public IEnumerable<Product> GetProductForCarousel()
@@ -84,6 +82,5 @@ namespace MarktVille.Repository
                 return _product;
             }
         }
-
     }
 }

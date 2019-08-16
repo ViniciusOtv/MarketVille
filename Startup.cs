@@ -18,12 +18,13 @@ namespace MarktVille
         }
 
         public Startup(IProductRepository productRepository, IStoreRepository storeRepository, ILocationRepository locationRepository,
-            IUserRepository userRepository)
+            IUserRepository userRepository, ICategoryRepository categoryRepository)
         {
             ProductRepository = productRepository;
             StoreRepository = storeRepository;
             LocationRepository = locationRepository;
             UserRepository = userRepository;
+            CategoryRepository = categoryRepository;
 
         }
 
@@ -34,6 +35,8 @@ namespace MarktVille
         public ILocationRepository LocationRepository { get;  }
 
         public IUserRepository UserRepository { get; }
+
+        public ICategoryRepository CategoryRepository { get;  }
 
 
         public IConfiguration Configuration { get; }
@@ -61,6 +64,7 @@ namespace MarktVille
             services.AddSingleton<IStoreRepository, StoreRepository>();
             services.AddSingleton<ILocationRepository, LocationRepository>();
             services.AddSingleton<IUserRepository, UserRepository>();
+            services.AddSingleton<ICategoryRepository, CategoryRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -9,11 +9,15 @@ namespace MarktVille.Controllers
     public class ProductController : Controller
     {
         private List<Product> _product;
-
+        private List<Category> _categories;
+        
         private IProductRepository _productRepository;
-        public ProductController(IProductRepository productRepository)
+
+        private ICategoryRepository _categoryRepository;
+        public ProductController(IProductRepository productRepository, ICategoryRepository categoryRepository)
         {
             _productRepository = productRepository;
+            _categoryRepository = categoryRepository;
         }
      
 
@@ -21,7 +25,9 @@ namespace MarktVille.Controllers
         {
             var model = new HomeIndexViewModel();
             _product = _productRepository.GetAllProducts().ToList();
+            _categories = _categoryRepository.GetAllCategories().ToList();
             model.Products = _product;
+            model.Categories = _categories;
 
             return View(model);
         }
