@@ -9,5 +9,7 @@ namespace MarktVille.Repository
     public interface ICategoryRepository
     {
         IEnumerable<Category> GetAllCategories();
+
+        IEnumerable<SubCategory> GetSubCategorieByCategoryId(List<Category> id);
     }
 }

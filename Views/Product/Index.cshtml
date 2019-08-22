@@ -10,31 +10,30 @@
         <div class="col-3" style="background-color: transparent; color: black; height: auto; margin-top: 50px">
 
             <div class="accordion" id="accordionExample">
-                
+
                 @foreach (var item in Model.Categories)
-                { 
+                {
                     <div class="card-header" id="headingOne">
                         <h2 class="mb-0">
                             <button class="btn" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                                 @item.Name
                             </button>
                         </h2>
+                        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+
+                            <div>
+                                <ul class="nav flex-column">
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="/home/index"> Introduction</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="/home/index"> dasgfa</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                 }
-
-                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
-
-                    <div>
-                        <ul class="nav flex-column">
-                            <li class="nav-item">
-                                <a class="nav-link" href="/home/index"> Introduction</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="/home/index"> dasgfa</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
 
 
                 @*<div class="card-header" id="headingTwo">

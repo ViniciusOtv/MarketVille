@@ -11,6 +11,8 @@ namespace MarktVille.Models
 
         public List<Category> Categories { get; set; }
 
+        public List<SubCategory> SubCategories { get; set; }
+
         public List<Supplier> Suppliers { get; set; }
 
         public List<Store> Stores { get; set; }
