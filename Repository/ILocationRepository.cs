@@ -10,5 +10,7 @@ namespace MarktVille.Repository
     {
         IEnumerable<Location> GetAllLocations();
 
+        IEnumerable<Location> GetLocalityById(int id);
+
     }
 }

@@ -17,15 +17,19 @@ namespace MarktVille.Controllers
         private List<Store> _stores;
         private List<Store> _prdStore;
         private List<Product> _selectProductStore;
-
+        private List<Store> _storeLocator;
+        private List<Location> _locality;
         private IStoreRepository _storeRepository;
         private IProductRepository _productRepository;
+        private ILocationRepository _locationRepository;
 
 
-        public StoreController(IStoreRepository storeRepository, IProductRepository productRepository)
+        public StoreController(IStoreRepository storeRepository, IProductRepository productRepository, 
+                                ILocationRepository locationRepository)
         {
             _storeRepository = storeRepository;
             _productRepository = productRepository;
+            _locationRepository = locationRepository;
         }
 
 
@@ -74,6 +78,26 @@ namespace MarktVille.Controllers
             catch (Exception ex)
             {
 
+                throw ex;
+            }
+        }
+
+        public IActionResult StoreLocation(int id)
+        {
+            try
+            {
+                _storeLocator = _storeRepository.GetStoreByLocationId(id).ToList();
+                _locality = _locationRepository.GetLocalityById(id).ToList();
+
+                var model = new HomeIndexViewModel();
+                model.Stores = _storeLocator;
+                model.Locations = _locality;
+
+                return View(model);
+
+            }
+            catch (Exception ex)
+            {
                 throw ex;
             }
         }

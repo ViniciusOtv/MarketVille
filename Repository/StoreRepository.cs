@@ -15,6 +15,8 @@ namespace MarktVille.Repository
         private List<Store> _store;
         private List<Store> _prdStore;
         private List<Store> _topStore;
+
+        private List<Store> _storeLocator;
         public StoreRepository(IConfiguration configuration)
         {
             _config = configuration;
@@ -50,22 +52,37 @@ namespace MarktVille.Repository
             }
 
         }
-       
+
 
         public IEnumerable<Store> GetTopStore()
         {
             using (SqlConnection connection = new SqlConnection(
                _config.GetConnectionString("Ville_dev")))
             {
-                var productStore = connection.Query<Store>(
+                var topStore = connection.Query<Store>(
                     "Select top 4 * from dbo.Stores ORDER BY StoreId DESC;");
 
 
-                _topStore = productStore.ToList();
+                _topStore = topStore.ToList();
 
                 return _topStore;
             }
         }
 
+        public IEnumerable<Store> GetStoreByLocationId(int id)
+        {
+
+            using (SqlConnection connection = new SqlConnection(
+                _config.GetConnectionString("Ville_dev")))
+            {
+                var storeByLocation = connection.Query<Store>(
+                    "Select * from Stores where LocationId = @LocationId",
+                    new { @LocationId = id });
+
+                _storeLocator = storeByLocation.ToList();
+
+                return _storeLocator;
+            }
+        }
     }
 }

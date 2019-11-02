@@ -267,6 +267,7 @@ h1 {
     height: 70vh;
 }
 
+
 .item {
     flex: 1;
     height: 100%;
@@ -276,10 +277,15 @@ h1 {
     transition: flex 0.8s ease;
 }
 
+.item .street_name
+{
+    display: none;
+}
+
 .item:hover{
     flex: 7;
 }
-   
+    
 
 .item-1 {
     background-image: url('/imagens/rua.jpeg');

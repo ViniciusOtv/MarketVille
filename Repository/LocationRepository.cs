@@ -34,5 +34,19 @@ namespace MarktVille.Repository
             }
 
         }
+
+        public IEnumerable<Location> GetLocalityById(int id)
+        {
+            using (SqlConnection connection = new SqlConnection(
+                _config.GetConnectionString("Ville_dev")))
+            {
+                var locality = connection.Query<Location>(
+                    "SELECT * FROM dbo.Locations WHERE LocationId = @LocationId",
+                     new { @LocationId = id });
+
+                _locations = locality.ToList();
+                return _locations;
+            }
+        }
     }
 }
