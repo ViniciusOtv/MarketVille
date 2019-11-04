@@ -1,0 +1,30 @@
+
+@{
+    ViewData["Title"] = "Index";
+}
+@model HomeIndexViewModel
+
+<div class="row">
+    <div class="container">
+        <div class="row">
+            <div class="col-9" style="margin: 30px 30px">
+                <div class="row">
+                    @foreach (var item in Model.Locations)
+                    {
+                        <h1>@item.NickName</h1>
+                    }
+                    @foreach (var store in Model.Stores)
+                    {
+                    <div class="card col-md-4" style="margin-left: 20px">
+                        <img class="img-fluid" src="@store.Image" />
+                        <p>@store.Name</p>
+                    </div>
+                    }
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
