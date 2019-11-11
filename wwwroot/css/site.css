@@ -86,10 +86,12 @@ body {
     color: white !important;
     font-weight: 500;
     font-size: 1.05rem;
+    // font-family: 'Oswald', sans-serif;
+    font-family: 'Libre Baskerville', serif;
 }
 
 .button-card {
-    font-family: "Hurme Bold", Helvetica, Arial, sans-serif;
+    font-family: 'Libre Baskerville', serif;
     font-size: 1.05rem;
     width: auto;
     color: white !important;
@@ -109,6 +111,8 @@ body {
     height: auto;
     text-align: center;
     margin-top: 70px;
+    // font-family: 'Oswald', sans-serif;
+    font-family: 'Libre Baskerville', serif;;
 }
 
 .btn-square {
@@ -149,6 +153,8 @@ body {
     margin-left: 5px;
     margin-top: 20px;
     box-shadow: 0 1px 15px rgba(128, 128, 128, 0.3);
+    height: 450px;
+    width: 250px;
 }
 
 .div-product-store {
@@ -198,18 +204,21 @@ body {
     font-size: 1.25rem;
     font-weight: 500;
     color: #3d3d3d;
+    font-family: 'Libre Baskerville', serif;
 }
 
 .product-card-title {
     color: rgb(58,58,58);
     font-weight: 700;
     font-size: 1.25rem;
+    font-family: 'Libre Baskerville', serif;
 }
 
 .product-card-subtitle {
     font-size: 1.05rem;
     font-weight: 500;
-    color: #3d3d3d
+    color: #3d3d3d;
+    font-family: 'Libre Baskerville', serif;
 }
 
     .icon-images {
