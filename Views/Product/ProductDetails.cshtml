@@ -1,5 +1,5 @@
 ﻿@{
-    ViewData["Title"] = "Detalhes do Produto";
+ViewData["Title"] = "Detalhes do Produto";
 
 }
 
@@ -16,40 +16,33 @@
             <div class="col-lg-10 order-lg-2">
                 @foreach (var product in Model.Products)
                 {
-                    <img class="img-fluid" src="@product.LargeImage" style="max-height : 600px;" />
+                <img src="@product.LargeImage" class="display-img img-fluid" style="max-height : 600px;" />
 
                 }
             </div>
 
             <div class="col-lg-2 text-center text-lg-left order-lg-1" style="background-color: transparent">
 
-                @foreach (var item in Model.Products)
-                {
+                <div class="product--body">
+                    <div class="product--image">
 
-                    <div class="owl-thumbs" data-slide-id="1">
-                        <span class="rounded float-left">
-                            <img src="@item.Image" width="164px" height="130px"/>
-                        </span>
-                    </div>
+                        @foreach (var product in Model.Products)
+                        {
+                        <div class="icon-images">
 
-                    <div class="owl-thumbs" data-slide-id="1">
-                        <span class="rounded float-left">
-                            <img src="@item.SmallImage" width="164px" height="130px;" style="margin-top: 20px"/>
-                        </span>
-                    </div>
+                            <img class ="product-icon-details" src="@product.Image" />
 
-                    <div class="owl-thumbs" data-slide-id="1">
-                        <span class="rounded float-left">
-                            <img src="@item.MediumImage" width="164px" height="130px" style="margin-top: 20px" />
-                        </span>
-                    </div>
+                            <img class ="product-icon-details"  src="@product.SmallImage" />
 
-                    <div class="owl-thumbs" data-slide-id="1">
-                        <span class="rounded float-left">
-                            <img src="@item.LargeImage" width="164px" height="130px" style="margin-top: 20px" />
-                        </span>
+                            <img class ="product-icon-details"  src="@product.MediumImage"/>
+
+                            <img class ="product-icon-details"  src="@product.LargeImage"/>
+                        </div>
+                        }
+
                     </div>
-                }
+                </div>
+
             </div>
 
         </div>
@@ -58,13 +51,13 @@
     <div class=" col-6" style="background-color: transparent; margin: 0px 30px; padding-top: 50px;">
         @foreach (var product in Model.Products)
         {
-            <p style="font-size: 1.75rem">@product.Name</p>
-            <p style="font-weight: 400; font-size: 1.05rem">@product.ShortDescription</p>
-            <p>Vendido e entregue por:  </p>
-            <p style="font-weight: 700; font-size: 2rem">R$@product.SellingPrice.ToString("N2")</p>
-            <p>Descrição do Produto @product.Details</p>
+        <p style="font-size: 1.75rem">@product.Name</p>
+        <p style="font-weight: 400; font-size: 1.05rem">@product.ShortDescription</p>
+        <p>Vendido e entregue por: </p>
+        <p style="font-weight: 700; font-size: 2rem">R$@product.SellingPrice.ToString("N2")</p>
+        <p><strong> Descrição do Produto: </strong> @product.Details</p>
 
-            <button type="button" class="btn-square">Comprar</button>
+        <a href="http://localhost:4200/" type="button" class="btn-square" style="text-decoration:none">Comprar</a>
         }
     </div>
 </div>

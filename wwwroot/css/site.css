@@ -212,6 +212,12 @@ body {
     color: #3d3d3d
 }
 
+    .icon-images {
+        cursor: pointer;
+       
+    }
+
+
 .icon-card {
     margin-left: 10px;
     display: flex;
@@ -312,3 +318,22 @@ h1 {
     right: 35px;
     bottom: 0;
 }
+
+.product-icon-details
+{
+    width: 120px;
+    height: 100px;
+    margin-top:20px;
+    border: 1px solid #ccc;
+}
+.product-icon-details:hover
+{
+    border: 1px solid #3d3d3d;
+
+}
+
+
+
+
+
+
