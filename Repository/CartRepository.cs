@@ -19,7 +19,7 @@ namespace MarktVille.Repository
             _config = configuration; 
         }
 
-        public IEnumerable<Cart> GetCartUser()
+        public IEnumerable<Cart> GetCarrinho()
         {
             return _cart;
         }

@@ -1,5 +1,5 @@
 ﻿@{
-    ViewData["Title"] = "Index";
+ViewData["Title"] = "Index";
 }
 @model HomeIndexViewModel
 
@@ -13,55 +13,72 @@
 
                 @foreach (var item in Model.Categories)
                 {
-                    <div class="card-header" id="headingOne">
-                        <h2 class="mb-0">
-                            <button class="btn" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                @item.Name
-                            </button>
-                        </h2>
-                        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                <div class="card-header" id="headingOne">
+                    <h2 class="mb-0">
+                        <button class="btn" type="button" data-toggle="collapse" data-target="#collapseOne"
+                            aria-expanded="true" aria-controls="collapseOne"
+                            style="font-family: 'Libre Baskerville', serif">
+                            @item.Name
+                        </button>
+                    </h2>
+                    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
+                        data-parent="#accordionExample">
 
-                            <div>
-                                <ul class="nav flex-column">
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="/home/index"> Introduction</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="/home/index"> dasgfa</a>
-                                    </li>
-                                </ul>
-                            </div>
+                        <div>
+                            <ul class="nav flex-column">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/home/index" style="font-family: 'Libre Baskerville', serif"> Introduction</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/home/index" style="font-family: 'Libre Baskerville', serif"> dasgfa</a>
+                                </li>
+                            </ul>
                         </div>
                     </div>
+                </div>
                 }
 
 
                 @*<div class="card-header" id="headingTwo">
-                        <h2 class="mb-0">
-                            <button class="btn collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                Categorias
-                            </button>
-                        </h2>
+                    <h2 class="mb-0">
+                        <button class="btn collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo"
+                            aria-expanded="false" aria-controls="collapseTwo">
+                            Categorias
+                        </button>
+                    </h2>
+                </div>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                    <div class="card-body">
+                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.
+                        3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt
+                        laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin
+                        coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes
+                        anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings
+                        occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard
+                        of them accusamus labore sustainable VHS.
                     </div>
-                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
-                        <div class="card-body">
-                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-                        </div>
-                    </div>
+                </div>
 
 
-                    <div class="card-header" id="headingThree">
-                        <h2 class="mb-0">
-                            <button class="btn collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                Categorias
-                            </button>
-                        </h2>
+                <div class="card-header" id="headingThree">
+                    <h2 class="mb-0">
+                        <button class="btn collapsed" type="button" data-toggle="collapse" data-target="#collapseThree"
+                            aria-expanded="false" aria-controls="collapseThree">
+                            Categorias
+                        </button>
+                    </h2>
+                </div>
+                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                    <div class="card-body">
+                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.
+                        3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt
+                        laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin
+                        coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes
+                        anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings
+                        occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard
+                        of them accusamus labore sustainable VHS.
                     </div>
-                    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
-                        <div class="card-body">
-                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-                        </div>
-                    </div>*@
+                </div>*@
             </div>
 
         </div>
@@ -69,35 +86,34 @@
         <div class="col-md-9">
             <div class="container">
                 <div class="row">
-                
+
                     @foreach (var product in Model.Products)
                     {
-                        <div class="card mb-4 bg-white rounded div-product" style="margin-left: 30px; margin-top: 50px">
-                            <img class="img-fluid" src="@product.Image" style="width: 233px; height: 194px" />
-                            <i class="far fa-heart heart-icon-card"></i>
-                            <div class="card-body card-product-shadow">
-                                <a style="text-decoration: none" href="/product/productdetails/@product.ProductId">
-                                    <p class="card-title product-card-title">@product.Name</p>
-                                    <p class="card-text product-card-text">R$@product.SellingPrice</p>
-                                    <p class="card-subtitle product-card-subtitle">@product.ShortDescription</p>
+                    <div class="card mb-4 bg-white rounded div-product" style="margin-left: 30px; margin-top: 50px">
+                        <img class="img-fluid" src="@product.Image" style="width: 233px; height: 194px" />
+                        <i class="far fa-heart heart-icon-card"></i>
+                        <div class="card-body card-product-shadow">
+                            <a style="text-decoration: none" href="/product/productdetails/@product.ProductId">
+                                <p class="card-title product-card-title">@product.Name</p>
+                                <p class="card-text product-card-text">R$@product.SellingPrice</p>
+                                <p class="card-subtitle product-card-subtitle">@product.ShortDescription</p>
 
-                                </a>
-                                <hr style="background-color: black">
+                            </a>
+                            <hr style="background-color: black">
 
-                                <div class="row icon-card">
-                                    <i class="far fa-star"></i>
-                                    <i class="far fa-star"></i>
-                                    <i class="far fa-star"></i>
-                                    <i class="far fa-star"></i>
-                                    <i class="far fa-star"></i>
-                                </div>
+                            <div class="row icon-card">
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
                             </div>
                         </div>
+                    </div>
                     }
-        
+
                 </div>
             </div>
         </div>
     </div>
 </div>
-

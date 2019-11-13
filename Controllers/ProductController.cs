@@ -10,14 +10,16 @@ namespace MarktVille.Controllers
     {
         private List<Product> _product;
         private List<Category> _categories;
-        
+        private List<SubCategory> _subcategory;
         private IProductRepository _productRepository;
-
         private ICategoryRepository _categoryRepository;
-        public ProductController(IProductRepository productRepository, ICategoryRepository categoryRepository)
+        private ISubCategoryRepository _subcategoryRepository;
+        
+        public ProductController(IProductRepository productRepository, ICategoryRepository categoryRepository, ISubCategoryRepository subCategoryRepository)
         {
             _productRepository = productRepository;
             _categoryRepository = categoryRepository;
+            _subcategoryRepository =  subCategoryRepository;
         }
      
 
@@ -26,6 +28,8 @@ namespace MarktVille.Controllers
             var model = new HomeIndexViewModel();
             _product = _productRepository.GetAllProducts().ToList();
             _categories = _categoryRepository.GetAllCategories().ToList();
+            //_subcategory = _subcategoryRepository.GetSubCategorieByCategoryId(_categories).ToList();
+           
             model.Products = _product;
             model.Categories = _categories;
 

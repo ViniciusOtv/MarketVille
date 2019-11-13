@@ -43,29 +43,6 @@ namespace MarktVille.Repository
             }
         }
 
-        public IEnumerable<SubCategory> GetSubCategorieByCategoryId(List<Category> id)
-        {
-            using (var connection = new SqlConnection(
-                _config.GetConnectionString("Ville_dev")))
-            {
-                try
-                {
-                    var query = connection.Query<SubCategory>(
-                        "SELECT * FROM dbo.SubCategory" +
-                        "WHERE CategoryId = @CategoryId",
-                        new { @CategoryId = id });
-
-                    _subCat = query.ToList();
-                    return _subCat;
-                }
-
-                catch (Exception)
-                {
-                    throw;
-                }
-            }
-        }
-
         //public IEnumerable<Category> GetSubcategories()
         //{
         //    using (var connection = new SqlConnection(

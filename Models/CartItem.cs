@@ -1,37 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace MarktVille.Models
+﻿namespace MarktVille.Models
 {
     public class CartItem
     {
-        private int cartItemId;
-        public int CardItemId
-        {
-            get { return cartItemId; }
-            set { cartItemId = value; }
-        }
-
-        private int productId;
-        public int ProductId
-        {
-            get { return productId; }
-            set { productId = value; }
-        }
-
-        private int quantity;
-        public int Quantity
-        {
-            get { return quantity; }
-            set { productId = value; }
-        }
+        public int ProductId { get; set; }
+        public string Name { get; set; }
+        public int UnitPrice { get; set; }
+        public int Quantity { get; set; }
         public CartItem(
-            int productId)
+            int productId,
+            string name,
+            int unitPrice)
         {
             this.ProductId = productId;
+            this.Name = name;
+            this.UnitPrice = unitPrice;
+            this.Quantity = 0;
         }
 
+        public decimal TotalPrice =>
+        UnitPrice * Quantity;
     }
 }
