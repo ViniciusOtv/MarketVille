@@ -1,19 +1,19 @@
-﻿
-@{
-    ViewData["Title"] = "Index";
+﻿@{
+ViewData["Title"] = "Index";
 }
 @model HomeIndexViewModel
 
 <div class="row">
     <div class="container">
         <div class="row">
-            <div class="col-9" style="margin: 30px 30px">
+            <div class="col-12" style="margin: 30px 30px;">
                 <div class="row">
                     @foreach (var store in Model.Stores)
                     {
-                    <div class="card col-md-4" style="margin-left: 20px">
-                        <img class="img-fluid" src="@store.Image" />
-                        <p>@store.Name</p>
+                    <div class="card mb-4 div-product-store " style="margin-left: 20px; box-shadow: 0 1px 15px rgba(128, 128, 128, 0.3);">
+                        <a href="/store/storedetail/@store.StoreId">
+                            <img class="img-fluid" src="@store.Image" />
+                        </a>
                     </div>
                     }
                 </div>
@@ -22,7 +22,4 @@
         </div>
     </div>
 </div>
-
-
-<h1>Index</h1>
 

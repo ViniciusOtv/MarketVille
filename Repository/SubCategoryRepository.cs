@@ -12,11 +12,14 @@ namespace MarktVille.Repository
 
     public class SubCategoryRepository : ISubCategoryRepository
     {
+        private IConfiguration _config;
+        private List<SubCategory> _subCat;
 
-        List<SubCategory> _subCat;
-        IConfiguration _config;
-
-        public IEnumerable<SubCategory> GetSubCategorieByCategoryId(List<Category> id)
+        public SubCategoryRepository(IConfiguration configuration)
+        {
+            _config = configuration;
+        }
+        public IEnumerable<SubCategory> GetSubCategorieByCategoryId(int id)
         {
             using (var connection = new SqlConnection(
                 _config.GetConnectionString("Ville_dev")))
@@ -24,8 +27,8 @@ namespace MarktVille.Repository
                 try
                 {
                     var query = connection.Query<SubCategory>(
-                        "SELECT * FROM dbo.SubCategory WHERE CategoryId in @CategoryId",
-                        new { @CategoryId = id }).ToList();
+                        "SELECT * FROM dbo.SubCategory WHERE CategoryId = @CategoryId",
+                        new { @CategoryId = id });
 
                     _subCat = query.ToList();
                     return _subCat;

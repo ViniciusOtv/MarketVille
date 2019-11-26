@@ -6,6 +6,6 @@ namespace MarktVille.Repository
 {
     public interface ISubCategoryRepository
     {
-        IEnumerable<SubCategory> GetSubCategorieByCategoryId(List<Category> id);
+        IEnumerable<SubCategory> GetSubCategorieByCategoryId(int id);
     }
 }

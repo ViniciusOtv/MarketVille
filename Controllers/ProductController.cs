@@ -1,6 +1,7 @@
 ﻿using MarktVille.Models;
 using MarktVille.Repository;
 using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -28,10 +29,15 @@ namespace MarktVille.Controllers
             var model = new HomeIndexViewModel();
             _product = _productRepository.GetAllProducts().ToList();
             _categories = _categoryRepository.GetAllCategories().ToList();
-            //_subcategory = _subcategoryRepository.GetSubCategorieByCategoryId(_categories).ToList();
-           
+            
+            foreach (var item in _categories)
+            {
+                _subcategory = _subcategoryRepository.GetSubCategorieByCategoryId(item.CategoryId).ToList();
+            }
+          
             model.Products = _product;
             model.Categories = _categories;
+            model.SubCategories = _subcategory;
 
             return View(model);
         }

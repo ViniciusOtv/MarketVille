@@ -1,5 +1,5 @@
 ﻿@{
-    Layout = null;
+Layout = null;
 }
 @model HomeIndexViewModel
 <p>
@@ -11,7 +11,7 @@
 <html>
 
 <head>
-    <meta charset="utf-8" />
+      <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - Vandora</title>
 
@@ -24,11 +24,19 @@
               asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute"
               crossorigin="anonymous"
               integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" />
+        <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     </environment>
     <link rel="stylesheet" href="~/css/site.css" />
     <link rel="stylesheet" href="~/css/all.css" />
     <link rel="stylesheet" href="~/css/all.min.css" />
     <link rel="stylesheet" href="~/css/solid.css" />
+
+    <link rel="stylesheet" type="text/css" href="css/slick.css" />
+    <link rel="stylesheet" type="text/css" href="css/slick-theme.css" />
+
+    <link href="https://fonts.googleapis.com/css?family=Oswald:500&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville&display=swap" rel="stylesheet">
 </head>
 
 <body style="background-color: white;">
@@ -36,26 +44,50 @@
         <div class="container">
             <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light">
                 <div class="container">
-                    <div class="logo-div"><a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Vandora</a></div>
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                            aria-expanded="false" aria-label="Toggle navigation">
+                    <div class="logo-div"><a class="navbar-brand" asp-area="" asp-controller="Home"
+                            asp-action="Index">Vandora</a></div>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse"
+                        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
                         <ul class="navbar-nav flex-grow-1">
                             <li class="nav-item">
-                                <a class="nav-link navbar-font-color" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                                <a class="nav-link navbar-font-color" asp-area="" asp-controller="Home"
+                                    asp-action="Index">Home</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link navbar-font-color" asp-area="" asp-controller="Home" asp-action="Index">Localidades</a>
+                                <a class="nav-link navbar-font-color" asp-area="" asp-controller="Home"
+                                    asp-action="Index">Localidades</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link navbar-font-color" asp-area="" asp-controller="Home" asp-action="Index">Produtos</a>
+                                <a class="nav-link navbar-font-color" asp-area="" asp-controller="Home"
+                                    asp-action="Index">Produtos</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link navbar-font-color" asp-area="" asp-controller="Home" asp-action="Index">Lojas</a>
+                                <a class="nav-link navbar-font-color" asp-area="" asp-controller="Home"
+                                    asp-action="Index">Lojas</a>
                             </li>
                         </ul>
+                    </div>
+
+                    <div class="button-card" style="margin-right: 20px">
+                        <a style="color: white" href="/Checkout">
+                            <!-- <i class="fas fa-shopping-bag"></i> -->
+                            <img src="~/imagens/cart.png" />
+                        </a>
+                    </div>
+
+                    <div class="button-card">
+                        <a style="color: white" href="http://localhost:4200/">
+                            Entrar
+                        </a>
+                    </div>
+
+                    <div class="button-card">
+                        <a style="color: white; margin-left: 30px" href="/Register">
+                            Cadastrar
+                        </a>
                     </div>
                 </div>
             </nav>
@@ -67,25 +99,28 @@
         <p style="color: white; text-align: center"></p>
     </div>
     <div class="container">
-        <div class="container" style="box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22); top: 200px; z-index: 1; position: absolute;">
-            <div class="row" style="background-color: #ededed;">
+        <div class="container"
+            style="box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22); top: 200px; z-index: 1; position: absolute;">
+            <div class="row" style="background-color: white;">
 
                 @foreach (var store in Model.Stores)
                 {
-                    <div class="col-md-12">
-                        <div class="container col-4" style="padding: 30px">
-                            <div class="card">
-                                <img class="img-fluid" src="@store.CoverImage" />
-                            </div>
+                <div class="col-md-12">
+                    <div class="container col-4" style="padding: 30px">
+                        <div class="card">
+                            <img class="img-fluid" src="@store.CoverImage" />
                         </div>
                     </div>
+                </div>
                 }
             </div>
             <div class="container-fluid">
 
                 <nav class="navbar navbar-expand-lg navbar-light bg-light">
                     <a class="navbar-brand" href="#">Categorias</a>
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Alterna navegação">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse"
+                        data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false"
+                        aria-label="Alterna navegação">
                         <span class="navbar-toggler-icon"></span>
                     </button>
 
@@ -110,19 +145,20 @@
 
             </div>
 
-            <div class="row" style="margin-left: 80px; height: auto; display: flex; justify-content: space-around">
+            <div class="row" style="margin-left: 80px; height: auto;">
 
                 @foreach (var product in Model.Products)
-                {
-                    <!-- <div class="card mb-4 bg-white rounded div-product-store" style="margin-top: 80px"> -->
-                    <div class="card mb-4 bg-white rounded div-product" style="margin-right: 20px; margin-top: 50px;">
+                    {
+                    <div class="card mb-4 bg-white rounded div-product" style="margin-left: 30px; margin-top: 50px">
                         <img class="img-fluid" src="@product.Image" style="width: 233px; height: 194px" />
                         <i class="far fa-heart heart-icon-card"></i>
                         <div class="card-body card-product-shadow">
-                            <p class="card-title product-card-title">@product.Name</p>
-                            <p class="card-text product-card-text">R$@product.SellingPrice</p>
-                            <p class="card-subtitle product-card-subtitle">@product.ShortDescription</p>
+                            <a style="text-decoration: none" href="/product/productdetails/@product.ProductId">
+                                <p class="card-title product-card-title">@product.Name</p>
+                                <p class="card-text product-card-text">R$@product.SellingPrice</p>
+                                <p class="card-subtitle product-card-subtitle">@product.ShortDescription</p>
 
+                            </a>
                             <hr style="background-color: black">
 
                             <div class="row icon-card">
@@ -133,9 +169,8 @@
                                 <i class="far fa-star"></i>
                             </div>
                         </div>
-
                     </div>
-                }
+                    }
 
             </div>
 

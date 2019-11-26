@@ -60,7 +60,7 @@ namespace MarktVille.Repository
                _config.GetConnectionString("Ville_dev")))
             {
                 var topStore = connection.Query<Store>(
-                    "Select top 4 * from dbo.Stores ORDER BY StoreId DESC;");
+                    "Select top 10 * from dbo.Stores ORDER BY StoreId DESC;");
 
 
                 _topStore = topStore.ToList();

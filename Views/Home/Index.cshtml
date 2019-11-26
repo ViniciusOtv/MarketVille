@@ -1,5 +1,5 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+ViewData["Title"] = "Home Page";
 }
 
 @model HomeIndexViewModel
@@ -14,20 +14,23 @@
             <div class="carousel-inner">
                 <div class="carousel-item active">
                     <img src="https://source.unsplash.com/D6Bk1A3-gMA/2300x900" class="d-block w-100" alt="...">
-                    <div class="carousel-caption flexslider" style="color: white; font-weight: 700; font-size: 1.5rem; font-family: 'Libre Baskerville', serif">
+                    <div class="carousel-caption flexslider"
+                        style="color: white; font-weight: 700; font-size: 1.5rem; font-family: 'Libre Baskerville', serif">
                         <p>Quer evitar a multidão da 25 de Março?</p>
                     </div>
                 </div>
                 <div class="carousel-item">
                     <img src="https://source.unsplash.com/HAIPJ8PyeL8/2300x900" class="d-block w-100" alt="...">
-                    <div class="carousel-caption flexslider" style="color: white; font-weight: 700; font-size: 1.5rem; font-family: 'Libre Baskerville', serif">
+                    <div class="carousel-caption flexslider"
+                        style="color: white; font-weight: 700; font-size: 1.5rem; font-family: 'Libre Baskerville', serif">
                         <h5>sem sair do conforto da sua casa.</h5>
                         <p>Compre os produtos da 25 de Março com os mesmos preços da 25 de Março</p>
                     </div>
                 </div>
                 <div class="carousel-item">
                     <img src="https://source.unsplash.com/_3Q3tsJ01nc/2300x900" class="d-block w-100" alt="...">
-                    <div class="carousel-caption flexslider" style="color: white; font-weight: 700; font-size: 1.5rem; font-family: 'Libre Baskerville', serif">
+                    <div class="carousel-caption flexslider"
+                        style="color: white; font-weight: 700; font-size: 1.5rem; font-family: 'Libre Baskerville', serif">
                         <h5>Third slide label</h5>
                         <p>Faça compras nos maiores polos de vendas da América Latina à preço de atacado.</p>
                     </div>
@@ -43,20 +46,30 @@
             </a>
         </div>
 
-        <div class="container col-12 center-page" style="margin-top: 120px">
-            <p> Visite as melhores Lojas nas melhores regiões.</p>
 
-            <div class="row">
-                @foreach (var store in Model.Stores)
-                {
+        <div class="row">
 
-                    <div class="card mb-4" style="margin-left: 30px; box-shadow: 0 1px 15px rgba(128, 128, 128, 0.3);">
-                        <a href="/store/storedetail/@store.StoreId">
-                            <img class="img-fluid" src="@store.Image" />
-                            <p class="name-store">@store.Name</p>
-                        </a>
+            <div class="container col-12 center-page" style="margin-top: 120px;">
+                <p style="font-weight: 700; font:family:'Libre Baskerville', serif !important; 
+            font-size: 1.75rem; color: rgba(72,72,72,0.6) !important;"> Visite as melhores Lojas nas melhores regiões.
+                </p>
+                <section class="container py-lg-4 mb-4">
+                    <div class="row">
+
+                        @foreach (var store in Model.Stores)
+                        {
+                        <div class="col-md-3 col-sm-4 col-6">
+                            <a class="box-shadow-sm d-block bg-white pb-sm-4 py-sm-4 
+                        mb-grid-gutter my-grid-gutter ml-auto mx-auto mr-auto mx-auto"
+                                href="/store/storedetail/@store.StoreId" style="box-sizing: border-box;">
+                                <img class="d-block mx-auto img-fluid" src="@store.Image"
+                                    style="max-width: 150px; height: 80px;" />
+                                <p class="name-store">@store.Name</p>
+                            </a>
+                        </div>
+                        }
                     </div>
-                }
+                </section>
 
             </div>
         </div>
@@ -65,7 +78,8 @@
 
     <div class="container" style="background-color: rgb(58,58,58); margin-top: 150px; height: auto">
 
-        <p style="color: white; padding: 10px; text-align: center; font-family:'Libre Baskerville', serif;">
+        <p style="color: white; padding-top: 15px; text-align: center; font-family:'Libre Baskerville', serif; font-weight: 500; 
+        font-size: 1.55rem;">
             Veja alguns dos nossos produtos <bold> direto da 25 de Março</bold>
         </p>
 
@@ -75,27 +89,28 @@
                     <div class="your-class">
                         @foreach (var product in Model.Products)
                         {
-                            <div class="card mb-4 bg-white rounded div-product" style="margin-right: 20px; margin-top: 50px;">
-                                <img class="img-fluid" src="@product.Image" />
-                                <i class="far fa-heart heart-icon-card"></i>
-                                <div class="card-body card-product-shadow">
-                                    <a href="/product/productdetails/@product.ProductId" style="text-decoration: none; ">
-                                        <p class="card-title product-card-title">@product.Name</p>
-                                        <p class="card-text product-card-text">R$@product.SellingPrice</p>
-                                        <p class="card-subtitle product-card-subtitle">@product.ShortDescription</p>
+                        <div class="card mb-4 bg-white rounded div-product"
+                            style="margin-right: 20px; margin-top: 50px;">
+                            <img class="img-fluid" src="@product.Image" />
+                            <i class="far fa-heart heart-icon-card"></i>
+                            <div class="card-body card-product-shadow">
+                                <a href="/product/productdetails/@product.ProductId" style="text-decoration: none; ">
+                                    <p class="card-title product-card-title">@product.Name</p>
+                                    <p class="card-text product-card-text">R$@product.SellingPrice</p>
+                                    <p class="card-subtitle product-card-subtitle">@product.ShortDescription</p>
 
-                                        <hr style="background-color: black">
+                                    <hr style="background-color: black">
 
-                                    </a>
-                                    <div class="row icon-card">
-                                        <i class="far fa-star"></i>
-                                        <i class="far fa-star"></i>
-                                        <i class="far fa-star"></i>
-                                        <i class="far fa-star"></i>
-                                        <i class="far fa-star"></i>
-                                    </div>
+                                </a>
+                                <div class="row icon-card">
+                                    <i class="far fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <i class="far fa-star"></i>
                                 </div>
                             </div>
+                        </div>
                         }
                     </div>
                 </div>
@@ -103,10 +118,12 @@
             </div>
             <div class="container" style="text-align: center;">
                 <a href="#slideCard" data-slide="prev">
-                    <span type="button" class="btn-square" style="text-align: center"><i class="fas fa-chevron-left"></i></span>
+                    <span type="button" class="btn-square" style="text-align: center"><i
+                            class="fas fa-chevron-left"></i></span>
                 </a>
                 <a href="#slideCard" data-slide="next">
-                    <span type="button" class="btn-square" style="text-align: center"><i class="fas fa-chevron-right"></i></span>
+                    <span type="button" class="btn-square" style="text-align: center"><i
+                            class="fas fa-chevron-right"></i></span>
                 </a>
             </div>
         </div>
