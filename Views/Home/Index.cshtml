@@ -3,8 +3,8 @@ ViewData["Title"] = "Home Page";
 }
 
 @model HomeIndexViewModel
-<div class="container">
-    <div class="bd-example" style="margin-top: 30px;">
+<div class="container-fluid" style="padding-right: 0px !important; padding-left: 0px !important">
+    <div class="bd-example" style="margin-top: 0px;">
         <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
             <ol class="carousel-indicators">
                 <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
@@ -13,14 +13,14 @@ ViewData["Title"] = "Home Page";
             </ol>
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="https://source.unsplash.com/D6Bk1A3-gMA/2300x900" class="d-block w-100" alt="...">
+                    <img src="https://source.unsplash.com/D6Bk1A3-gMA/2300x700" class="d-block w-100" alt="...">
                     <div class="carousel-caption flexslider"
                         style="color: white; font-weight: 700; font-size: 1.5rem; font-family: 'Libre Baskerville', serif">
                         <p>Quer evitar a multidão da 25 de Março?</p>
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <img src="https://source.unsplash.com/HAIPJ8PyeL8/2300x900" class="d-block w-100" alt="...">
+                    <img src="https://source.unsplash.com/HAIPJ8PyeL8/2300x700" class="d-block w-100" alt="...">
                     <div class="carousel-caption flexslider"
                         style="color: white; font-weight: 700; font-size: 1.5rem; font-family: 'Libre Baskerville', serif">
                         <h5>sem sair do conforto da sua casa.</h5>
@@ -28,7 +28,7 @@ ViewData["Title"] = "Home Page";
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <img src="https://source.unsplash.com/_3Q3tsJ01nc/2300x900" class="d-block w-100" alt="...">
+                    <img src="https://source.unsplash.com/_3Q3tsJ01nc/2300x700" class="d-block w-100" alt="...">
                     <div class="carousel-caption flexslider"
                         style="color: white; font-weight: 700; font-size: 1.5rem; font-family: 'Libre Baskerville', serif">
                         <h5>Third slide label</h5>
@@ -75,15 +75,30 @@ ViewData["Title"] = "Home Page";
         </div>
     </div>
 
+    <div class="container-fluid px-lg-5 px-xl-7 py-6">
+        <div class="row">
+            <div class="col-lg-10 col-xl-8 text-center mx-auto">
+                <h2 class="display-3 mb-5">Aqui quem faz o "rapa" é Você</h2>
+                <p class="lead text-muted mb-6">
+                   Compre no Brás, 25 de Março e Santa Ifigênia sem sair do conforto de sua casa, esqueça 
+                   super lotação, transtornos e até assaltos.
+                   Entregamos o produto em sua casa.
+                </p>
 
-    <div class="container" style="background-color: rgb(58,58,58); margin-top: 150px; height: auto">
+            </div>
 
-        <p style="color: white; padding-top: 15px; text-align: center; font-family:'Libre Baskerville', serif; font-weight: 500; 
+        </div>
+    </div>
+
+
+    <div class="container-fluid" style="background-color: transparent; margin-top: 50px; height: auto">
+
+        <p style="color: rgba(72,72,72,0.6); padding-top: 15px; text-align: center; font-family:'Libre Baskerville', serif; font-weight: 700; 
         font-size: 1.55rem;">
             Veja alguns dos nossos produtos <bold> direto da 25 de Março</bold>
         </p>
 
-        <div class="row" style="background-color: purple; padding: 20px;">
+        <div class="row" style="background-color: transparent; padding: 20px;">
             <div class="container">
                 <div id="slideCard">
                     <div class="your-class">
@@ -127,11 +142,5 @@ ViewData["Title"] = "Home Page";
                 </a>
             </div>
         </div>
-
-
     </div>
-
-
-
-
 </div>
