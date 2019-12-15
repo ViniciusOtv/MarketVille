@@ -127,6 +127,166 @@ body {
     font-family:'Libre Baskerville',
 }
 
+.swiper-container {
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    list-style: none;
+    padding: 0;
+    z-index: 1;
+}
+.h-auto {
+    height: auto !important;
+}
+
+.pl-2, .px-2 {
+    padding-left: .5rem !important;
+}
+.pr-2, .px-2 {
+    padding-right: .5rem !important;
+}
+
+.swiper-slide {
+    -webkit-flex-shrink: 0;
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    -webkit-transition-property: -webkit-transform;
+    transition-property: -webkit-transform;
+    -o-transition-property: transform;
+    transition-property: transform;
+    transition-property: transform,-webkit-transform;
+}
+
+.card-body {
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    padding: 1.25rem;
+}
+
+.card-text:last-child {
+    margin-bottom: 0;
+}
+
+.ml-n2, .mx-n2 {
+    margin-left: -.5rem !important;
+}
+.mr-n2, .mx-n2 {
+    margin-right: -.5rem !important;
+}
+.pt-3, .py-3 {
+    padding-top: 1rem !important;
+}
+
+.card {
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(0,0,0,0.125);
+    border-radius: .4rem;
+}
+
+.card-poster {
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -ms-flex-align: end;
+    align-items: flex-end;
+    color: #fff;
+    border: none;
+    overflow: hidden;
+    box-shadow: 0 0 0.25rem rgba(0,0,0,0.075);
+    min-height: 350px;
+}
+
+.light-overlay, .dark-overlay, .gradient-overlay {
+    position: relative;
+    overflow: hidden;
+}
+
+.gradient-overlay::after {
+    opacity: 1;
+    background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 78%, rgba(0,0,0,0.65) 100%);
+}
+
+.light-overlay::after, .dark-overlay::after, .gradient-overlay::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    content: ' ';
+    opacity: .3;
+    background: #000;
+}
+
+.tile-link {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    z-index: 30;
+}
+
+.overlay-content {
+    position: relative;
+    z-index: 20;
+}
+
+.card-text:last-child {
+    margin-bottom: 0;
+}
+
+.text-sm {
+    font-size: .875rem;
+}
+
+.text-uppercase {
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    text-transform: uppercase !important;
+}
+
+.text-shadow {
+    text-shadow: 2px 2px 2px rgba(0,0,0,0.1);
+}
+
+.hover-animate {
+    transition: all 0.2s ease-in-out;
+}
+
+.mb-4, .my-4 {
+    margin-bottom: 1.5rem !important;
+}
+
+img.bg-image {
+    font-family: 'object-fit: cover;';
+    -o-object-fit: cover;
+    object-fit: cover;
+}
+
+.bg-image {
+    /* position: absolute; */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+img {
+    vertical-align: middle;
+    border-style: none;
+}
+
 .display-3{
     font-size: 3.25rem;
     font-weight: 400;

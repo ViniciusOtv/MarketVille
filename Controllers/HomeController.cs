@@ -16,14 +16,19 @@ namespace MarktVille.Controllers
         private List<Product> _prdCarousel;
         private List<Store> _stores;
 
+        private List<Location> _locality;
         private IProductRepository _productRepository;
         private IStoreRepository _storeRepository;
 
+        private ILocationRepository _locationRepository;
 
-        public HomeController(IProductRepository productRepository, IStoreRepository storeRepository)
+
+        public HomeController(IProductRepository productRepository, IStoreRepository storeRepository, 
+        ILocationRepository locationRepository)
         {
             _productRepository = productRepository;
             _storeRepository = storeRepository;
+            _locationRepository = locationRepository;
 
         }
         public IActionResult Index()
@@ -31,9 +36,11 @@ namespace MarktVille.Controllers
             //_products = _productRepository.GetAllProducts().ToList();
             _stores = _storeRepository.GetTopStore().ToList();
             _prdCarousel = _productRepository.GetProductForCarousel().ToList();
+            _locality = _locationRepository.GetAllLocations().ToList();
             var model = new HomeIndexViewModel();
             model.Products = _prdCarousel;
             model.Stores = _stores;
+            model.Locations = _locality;
             return View(model);
 
         }

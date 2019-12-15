@@ -45,102 +45,133 @@ ViewData["Title"] = "Home Page";
                 <span class="sr-only">Next</span>
             </a>
         </div>
-
-
-        <div class="row">
-
-            <div class="container col-12 center-page" style="margin-top: 120px;">
-                <p style="font-weight: 700; font:family:'Libre Baskerville', serif !important; 
-            font-size: 1.75rem; color: rgba(72,72,72,0.6) !important;"> Visite as melhores Lojas nas melhores regiões.
-                </p>
-                <section class="container py-lg-4 mb-4">
-                    <div class="row">
-
-                        @foreach (var store in Model.Stores)
-                        {
-                        <div class="col-md-3 col-sm-4 col-6">
-                            <a class="box-shadow-sm d-block bg-white pb-sm-4 py-sm-4 
-                        mb-grid-gutter my-grid-gutter ml-auto mx-auto mr-auto mx-auto"
-                                href="/store/storedetail/@store.StoreId" style="box-sizing: border-box;">
-                                <img class="d-block mx-auto img-fluid" src="@store.Image"
-                                    style="max-width: 150px; height: 80px;" />
-                                <p class="name-store">@store.Name</p>
-                            </a>
-                        </div>
-                        }
-                    </div>
-                </section>
-
-            </div>
-        </div>
     </div>
 
-    <div class="container-fluid px-lg-5 px-xl-7 py-6">
-        <div class="row">
-            <div class="col-lg-10 col-xl-8 text-center mx-auto">
-                <h2 class="display-3 mb-5">Aqui quem faz o "rapa" é Você</h2>
-                <p class="lead text-muted mb-6">
-                   Compre no Brás, 25 de Março e Santa Ifigênia sem sair do conforto de sua casa, esqueça 
-                   super lotação, transtornos e até assaltos.
-                   Entregamos o produto em sua casa.
-                </p>
+    <section class="py-6" style="background-color: transparent;">
 
-            </div>
+        <div class="container py-lg-4 mb-4" style="background-color: white">
+            <p style="font-weight: 700; font-size: 1.75rem; color: rgba(72,72,72,0.6) !important; 
+            font:family: 'Libre Baskerville', serif !important"> Visite as melhores
+                Lojas nas melhores
+                regiões.
+            </p>
 
-        </div>
-    </div>
-
-
-    <div class="container-fluid" style="background-color: transparent; margin-top: 50px; height: auto">
-
-        <p style="color: rgba(72,72,72,0.6); padding-top: 15px; text-align: center; font-family:'Libre Baskerville', serif; font-weight: 700; 
-        font-size: 1.55rem;">
-            Veja alguns dos nossos produtos <bold> direto da 25 de Março</bold>
-        </p>
-
-        <div class="row" style="background-color: transparent; padding: 20px;">
-            <div class="container">
-                <div id="slideCard">
-                    <div class="your-class">
-                        @foreach (var product in Model.Products)
-                        {
-                        <div class="card mb-4 bg-white rounded div-product"
-                            style="margin-right: 20px; margin-top: 50px;">
-                            <img class="img-fluid" src="@product.Image" />
-                            <i class="far fa-heart heart-icon-card"></i>
-                            <div class="card-body card-product-shadow">
-                                <a href="/product/productdetails/@product.ProductId" style="text-decoration: none; ">
-                                    <p class="card-title product-card-title">@product.Name</p>
-                                    <p class="card-text product-card-text">R$@product.SellingPrice</p>
-                                    <p class="card-subtitle product-card-subtitle">@product.ShortDescription</p>
-
-                                    <hr style="background-color: black">
-
-                                </a>
-                                <div class="row icon-card">
-                                    <i class="far fa-star"></i>
-                                    <i class="far fa-star"></i>
-                                    <i class="far fa-star"></i>
-                                    <i class="far fa-star"></i>
-                                    <i class="far fa-star"></i>
-                                </div>
-                            </div>
+            <div class="row swiper-container mx-n2 pt-3" style="background-color: transparent;">
+                @foreach (var locality in Model.Locations)
+                {
+                <div class="swiper-slide h-auto px-2 swiper-slide-active" data-swiper-slide-index="0"
+                    style="width: 250px; margin-right: 10px; margin-left: 25px;">
+                    <div class="card card-poster gradient-overlay hover-animate mb-4 mb-lg-0">
+                        <a href="category.html" class="tile-link"></a>
+                        <img src="@locality.ImageLocality" alt="Card image" class="bg-image">
+                        <div class="card-body overlay-content">
+                            <h6 class="card-title text-shadow text-uppercase" style="font-size: 1rem;">@locality.Street
+                            </h6>
+                            <p class="card-text text-sm">@locality.NickName</p>
                         </div>
-                        }
                     </div>
                 </div>
+                }
 
             </div>
-            <div class="container" style="text-align: center;">
-                <a href="#slideCard" data-slide="prev">
-                    <span type="button" class="btn-square" style="text-align: center"><i
-                            class="fas fa-chevron-left"></i></span>
-                </a>
-                <a href="#slideCard" data-slide="next">
-                    <span type="button" class="btn-square" style="text-align: center"><i
-                            class="fas fa-chevron-right"></i></span>
-                </a>
-            </div>
+    </section>
+
+
+    <div class="row">
+        <div class="container col-12 center-page" style="margin-top: 120px;">
+            <p style="font-weight: 700; font:family:'Libre Baskerville', serif !important; 
+            font-size: 1.75rem; color: rgba(72,72,72,0.6) !important;"> Visite as melhores Lojas nas melhores regiões.
+            </p>
+            <section class="container py-lg-4 mb-4">
+                <div class="row">
+
+                    @foreach (var store in Model.Stores)
+                    {
+                    <div class="col-md-3 col-sm-4 col-6">
+                        <a class="box-shadow-sm d-block bg-white pb-sm-4 py-sm-4 
+                        mb-grid-gutter my-grid-gutter ml-auto mx-auto mr-auto mx-auto"
+                            href="/store/storedetail/@store.StoreId" style="box-sizing: border-box;">
+                            <img class="d-block mx-auto img-fluid" src="@store.Image"
+                                style="max-width: 150px; height: 80px;" />
+                            <p class="name-store">@store.Name</p>
+                        </a>
+                    </div>
+                    }
+                </div>
+            </section>
+
         </div>
     </div>
+</div>
+
+<div class="container-fluid px-lg-5 px-xl-7 py-6">
+    <div class="row">
+        <div class="col-lg-10 col-xl-8 text-center mx-auto">
+            <h2 class="display-3 mb-5">Aqui quem faz o "rapa" é Você</h2>
+            <p class="lead text-muted mb-6">
+                Compre no Brás, 25 de Março e Santa Ifigênia sem sair do conforto de sua casa, esqueça
+                super lotação, transtornos e até assaltos.
+                Entregamos o produto em sua casa.
+            </p>
+
+        </div>
+
+    </div>
+</div>
+
+
+<div class="container-fluid" style="background-color: transparent; margin-top: 50px; height: auto">
+
+    <div class="row" style="background-color: #ededed; padding: 20px;">
+
+        <div class="container">
+            <p style="color: rgba(72,72,72,0.6); padding-top: 15px; text-align: center; font-family:'Libre Baskerville', serif; font-weight: 700; 
+                    font-size: 1.55rem;">
+                Veja alguns dos nossos produtos <bold> direto da 25 de Março</bold>
+            </p>
+            <div id="slideCard">
+                <div class="your-class">
+                    @foreach (var product in Model.Products)
+                    {
+                    <div class="card mb-4 bg-white rounded div-product" style="margin-right: 20px; margin-top: 50px;">
+                        <img class="img-fluid" src="@product.Image" style="width: 233px; height: 194px" />
+                        <i class="far fa-heart heart-icon-card"></i>
+                        <div class="card-body card-product-shadow">
+                            <a href="/product/productdetails/@product.ProductId" style="text-decoration: none; ">
+                                <p class="card-title product-card-title">@product.Name</p>
+                                <p class="card-text product-card-text">R$@product.SellingPrice</p>
+                                <p class="card-subtitle product-card-subtitle">@product.ShortDescription</p>
+
+                                <hr style="background-color: black">
+
+                            </a>
+                            <div class="row icon-card">
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    }
+                </div>
+            </div>
+
+        </div>
+        <div class="container" style="text-align: center;">
+            <a href="#slideCard" data-slide="prev">
+                <span type="button" class="btn-square" style="text-align: center"><i
+                        class="fas fa-chevron-left"></i></span>
+            </a>
+            <a href="#slideCard" data-slide="next">
+                <span type="button" class="btn-square" style="text-align: center"><i
+                        class="fas fa-chevron-right"></i></span>
+            </a>
+        </div>
+    </div>
+    <div>
+
+    </div>
+</div>
 </div>
