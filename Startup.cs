@@ -1,5 +1,6 @@
-﻿using MarktVille.DAL;
+using MarktVille.DAL;
 using MarktVille.Repository;
+using MarktVille.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -8,6 +9,7 @@ using Microsoft.AspNetCore.SpaServices.AngularCli;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Serilog;
 
 namespace MarktVille
 {
@@ -17,30 +19,6 @@ namespace MarktVille
         {
             Configuration = configuration;
         }
-
-        public Startup(IProductRepository productRepository, IStoreRepository storeRepository, ILocationRepository locationRepository,
-            IUserRepository userRepository, ICategoryRepository categoryRepository, ISubCategoryRepository subCategoryRepository)
-        {
-            ProductRepository = productRepository;
-            StoreRepository = storeRepository;
-            LocationRepository = locationRepository;
-            UserRepository = userRepository;
-            CategoryRepository = categoryRepository;
-            SubCategoryRepository = subCategoryRepository;
-
-        }
-
-        public IProductRepository ProductRepository { get; }
-
-        public IStoreRepository StoreRepository { get; }
-
-        public ILocationRepository LocationRepository { get;  }
-
-        public IUserRepository UserRepository { get; }
-
-        public ICategoryRepository CategoryRepository { get;  }
-
-        public ISubCategoryRepository SubCategoryRepository { get; }
 
         public IConfiguration Configuration { get; }
 
@@ -63,12 +41,20 @@ namespace MarktVille
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
             services.AddDistributedMemoryCache();
             services.AddSession();
+
+            // Register Repositories
             services.AddSingleton<IProductRepository, ProductRepository>();
             services.AddSingleton<IStoreRepository, StoreRepository>();
             services.AddSingleton<ILocationRepository, LocationRepository>();
             services.AddSingleton<IUserRepository, UserRepository>();
             services.AddSingleton<ICategoryRepository, CategoryRepository>();
             services.AddSingleton<ISubCategoryRepository, SubCategoryRepository>();
+
+            // Register Services
+            services.AddSingleton<IProductService, ProductService>();
+            
+            // Register Serilog ILogger
+            services.AddSingleton(Log.Logger);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

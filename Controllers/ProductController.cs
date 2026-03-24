@@ -1,6 +1,7 @@
-﻿using MarktVille.Models;
-using MarktVille.Repository;
+using MarktVille.Models;
+using MarktVille.Services;
 using Microsoft.AspNetCore.Mvc;
+using Serilog;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,46 +10,58 @@ namespace MarktVille.Controllers
 {
     public class ProductController : Controller
     {
-        private List<Product> _product;
-        private List<Category> _categories;
-        private List<SubCategory> _subcategory;
-        private IProductRepository _productRepository;
-        private ICategoryRepository _categoryRepository;
-        private ISubCategoryRepository _subcategoryRepository;
-        
-        public ProductController(IProductRepository productRepository, ICategoryRepository categoryRepository, ISubCategoryRepository subCategoryRepository)
+        private readonly IProductService _productService;
+        private readonly ILogger _logger;
+
+        public ProductController(IProductService productService, ILogger logger)
         {
-            _productRepository = productRepository;
-            _categoryRepository = categoryRepository;
-            _subcategoryRepository =  subCategoryRepository;
+            _productService = productService ?? throw new ArgumentNullException(nameof(productService));
+            _logger = logger.ForContext<ProductController>() ?? throw new ArgumentNullException(nameof(logger));
         }
-     
 
         public IActionResult Index()
         {
-            var model = new HomeIndexViewModel();
-            _product = _productRepository.GetAllProducts().ToList();
-            _categories = _categoryRepository.GetAllCategories().ToList();
-            
-            foreach (var item in _categories)
+            _logger.Information("Request received for Product Index page.");
+            try
             {
-                _subcategory = _subcategoryRepository.GetSubCategorieByCategoryId(item.CategoryId).ToList();
+                var model = _productService.GetHomeIndexViewModelData();
+                _logger.Information("Successfully retrieved data for Product Index page.");
+                return View(model);
             }
-          
-            model.Products = _product;
-            model.Categories = _categories;
-            model.SubCategories = _subcategory;
-
-            return View(model);
+            catch (Exception ex)
+            {
+                _logger.Error(ex, "Error occurred while retrieving data for Product Index page.");
+                return StatusCode(500, "An error occurred while loading the product index.");
+            }
         }
 
         public IActionResult ProductDetails(int id)
         {
-            var model = new HomeIndexViewModel();
-            _product = _productRepository.GetProductById(id).ToList();
-            model.Products = _product;
+            _logger.Information("Request received to get product details for ID: {ProductId}", id);
+            try
+            {
+                var product = _productService.GetProductDetails(id);
+                if (product == null)
+                {
+                    _logger.Warning("Product with ID: {ProductId} not found.", id);
+                    return NotFound();
+                }
 
-            return View(model);
+                // The original controller returned a HomeIndexViewModel with a list containing the product.
+                // We maintain this structure for view compatibility.
+                var model = new HomeIndexViewModel
+                {
+                    Products = new List<Product> { product }
+                };
+
+                _logger.Information("Successfully retrieved product details for ID: {ProductId}", id);
+                return View(model);
+            }
+            catch (Exception ex)
+            {
+                _logger.Error(ex, "Error occurred while retrieving product details for ID: {ProductId}.", id);
+                return StatusCode(500, "An error occurred while retrieving product details.");
+            }
         }
     }
 }
